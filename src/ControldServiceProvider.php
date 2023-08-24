@@ -2,9 +2,9 @@
 
 namespace Rapkis\Controld;
 
+use Rapkis\Controld\Commands\ControldCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rapkis\Controld\Commands\ControldCommand;
 
 class ControldServiceProvider extends PackageServiceProvider
 {
