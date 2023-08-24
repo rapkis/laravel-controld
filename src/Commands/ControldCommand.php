@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rapkis\Controld\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ControldCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-controld';
 
     public $description = 'My command';
 
