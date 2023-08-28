@@ -17,8 +17,9 @@
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "guzzlehttp/guzzle": "^7.7",
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -34,8 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Rapkis\\Controld\\": "src/",
-            "Rapkis\\Controld\\Database\\Factories\\": "database/factories/"
+            "Rapkis\\Controld\\": "src/"
         }
     },
     "autoload-dev": {
