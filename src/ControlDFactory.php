@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rapkis\Controld\Api;
+namespace Rapkis\Controld;
 
 use Illuminate\Config\Repository;
 use Illuminate\Http\Client\PendingRequest;

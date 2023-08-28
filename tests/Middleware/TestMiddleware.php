@@ -1,6 +1,6 @@
 <?php
 
-namespace Rapkis\Controld\Tests\Api;
+namespace Rapkis\Controld\Tests\Middleware;
 
 use Closure;
 use Psr\Http\Message\RequestInterface;

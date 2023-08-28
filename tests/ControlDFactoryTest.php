@@ -2,9 +2,9 @@
 
 use Illuminate\Config\Repository;
 use Illuminate\Http\Client\PendingRequest;
-use Rapkis\Controld\Api\ControlDFactory;
-use Rapkis\Controld\Api\RetryCallback;
-use Rapkis\Controld\Tests\Api\TestMiddleware;
+use Rapkis\Controld\ControlDFactory;
+use Rapkis\Controld\RetryCallback;
+use Rapkis\Controld\Tests\Middleware\TestMiddleware;
 
 it('creates an api client', function () {
     $config = app(Repository::class);
