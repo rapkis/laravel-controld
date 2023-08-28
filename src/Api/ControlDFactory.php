@@ -21,9 +21,7 @@ class ControlDFactory
             ->acceptJson()
             ->baseUrl($this->config->get('controld.url'))
             ->withToken($this->config->get('controld.secret'))
-            ->retry(3, 250, function ($e) {
-                return $e instanceof ConnectionException || $e->getCode() >= 500;
-            });
+            ->retry(3, 250, new RetryCallback());
 
         foreach ($this->config->get('controld.middleware') ?? [] as $middleware) {
             $this->request->withMiddleware(app($middleware));

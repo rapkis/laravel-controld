@@ -48,4 +48,4 @@ jobs:
         run: composer show -D
 
       - name: Execute tests
-        run: XDEBUG_MODE=coverage php ./vendor/bin/pest --ci --coverage --do-not-cache-result
+        run: XDEBUG_MODE=coverage php ./vendor/bin/pest --ci --coverage --min=100 --do-not-cache-result

@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Config\Repository;
-use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\Api\ControlDFactory;
+use Rapkis\Controld\Api\RetryCallback;
 use Rapkis\Controld\Tests\Api\TestMiddleware;
 
 it('creates an api client', function () {
@@ -29,9 +29,9 @@ it('creates an api client', function () {
         ->with($this->createStub(TestMiddleware::class))
         ->willReturnSelf();
 
-    $request->expects($this->once())->method('retry')->with(3, 250, function ($e) {
-        return $e instanceof ConnectionException || $e->getCode() >= 500;
-    })->willReturnSelf();
+    $request->expects($this->once())->method('retry')
+        ->with(3, 250, new RetryCallback())
+        ->willReturnSelf();
 
     $factory->make();
 });
