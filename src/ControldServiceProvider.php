@@ -3,8 +3,6 @@
 namespace Rapkis\Controld;
 
 use Illuminate\Contracts\Foundation\Application;
-use Rapkis\Controld\Api\ControlD;
-use Rapkis\Controld\Api\ControlDFactory;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

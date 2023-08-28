@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Http\Client\ConnectionException;
-use Rapkis\Controld\Api\RetryCallback;
+use Rapkis\Controld\RetryCallback;
 
 it('will retry for exception', function (Throwable $exception, bool $willRetry) {
     $retry = new RetryCallback();
