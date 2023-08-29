@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
-use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
 use Rapkis\Controld\Resources\Profiles;
+use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
 

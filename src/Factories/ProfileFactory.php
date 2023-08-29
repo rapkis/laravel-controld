@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rapkis\Controld\Factories;
 
-use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Entities\ProfileFilters;
+use Rapkis\Controld\Responses\Profile;
 
 class ProfileFactory
 {

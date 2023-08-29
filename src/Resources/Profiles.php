@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
-use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
+use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
 

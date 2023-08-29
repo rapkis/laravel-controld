@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Entities\ProfileFilters;
 use Rapkis\Controld\Factories\ProfileFactory;
+use Rapkis\Controld\Responses\Profile;
 
 it('builds a profile', function (array $data, Profile $expected) {
     expect((new ProfileFactory())->make($data))->toEqual($expected);
