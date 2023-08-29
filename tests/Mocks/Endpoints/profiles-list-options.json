@@ -1,0 +1,83 @@
+{
+    "body": {
+        "options": [
+            {
+                "PK": "block_rfc1918",
+                "title": "DNS Rebind Protection",
+                "description": "Blocks domains that point to RFC1918 addresses.",
+                "type": "toggle",
+                "default_value": 0,
+                "info_url": "https://docs.controld.com/docs/dns-rebind-option"
+            },
+            {
+                "PK": "spoof_ipv6",
+                "title": "IPv4/IPv6 Compatibility Mode",
+                "description": "Redirect A records via IPv6 resolver and vice versa.",
+                "type": "toggle",
+                "default_value": 0,
+                "info_url": "https://docs.controld.com/docs/ipv6-compatibility-mode"
+            },
+            {
+                "PK": "no_dnssec",
+                "title": "Disable DNSSEC",
+                "description": "Turn off DNSSEC validation and ECS support for compatibility.",
+                "type": "toggle",
+                "default_value": 0,
+                "info_url": "https://docs.controld.com/docs/disable-dnssec-option"
+            },
+            {
+                "PK": "ai_malware",
+                "title": "AI Malware Filter",
+                "description": "EXPERIMENTAL: Blocks malicious domains using machine learning.",
+                "type": "dropdown",
+                "default_value": {
+                    "0.9": "Relaxed Mode",
+                    "0.7": "Balanced Mode",
+                    "0.5": "Strict Mode"
+                },
+                "info_url": "https://docs.controld.com/docs/ai-malware-filter"
+            },
+            {
+                "PK": "ttl_blck",
+                "title": "Block TTL",
+                "description": "DNS record TTL (in seconds) when blocking.",
+                "type": "field",
+                "default_value": 10,
+                "info_url": "https://docs.controld.com/docs/ttl-overrides"
+            },
+            {
+                "PK": "ttl_spff",
+                "title": "Redirect TTL",
+                "description": "DNS record TTL (in seconds) when redirecting.",
+                "type": "field",
+                "default_value": 20,
+                "info_url": "https://docs.controld.com/docs/ttl-overrides"
+            },
+            {
+                "PK": "ttl_pass",
+                "title": "Bypass TTL",
+                "description": "DNS record TTL (in seconds) when bypassing.",
+                "type": "field",
+                "default_value": 60,
+                "info_url": "https://docs.controld.com/docs/ttl-overrides"
+            },
+            {
+                "PK": "safesearch",
+                "title": "Safe Search",
+                "description": "Prevent search engines from showing mature content.",
+                "type": "toggle",
+                "default_value": 0,
+                "info_url": "https://docs.controld.com/docs/safe-search"
+            },
+            {
+                "PK": "safeyoutube",
+                "title": "Restricted Youtube",
+                "description": "Prevent Youtube from showing mature content and disable comments.",
+                "type": "toggle",
+                "default_value": 0,
+                "info_url": "https://docs.controld.com/docs/restricted-youtube"
+            }
+        ]
+    },
+    "success": true
+}
