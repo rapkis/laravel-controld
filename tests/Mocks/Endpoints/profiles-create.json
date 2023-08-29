@@ -1,0 +1,38 @@
+{
+    "body": {
+        "profiles": [
+            {
+                "PK": "123test123",
+                "updated": 111111111,
+                "name": "Test",
+                "profile": {
+                    "flt": {
+                        "count": 3
+                    },
+                    "cflt": {
+                        "count": 0
+                    },
+                    "ipflt": {
+                        "count": 0
+                    },
+                    "rule": {
+                        "count": 0
+                    },
+                    "svc": {
+                        "count": 1
+                    },
+                    "grp": {
+                        "count": 0
+                    },
+                    "opt": {
+                        "count": 0,
+                        "data": []
+                    },
+                    "da": []
+                }
+            }
+        ]
+    },
+    "success": true,
+    "message": "Profile has been created"
+}

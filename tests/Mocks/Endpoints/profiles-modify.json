@@ -1,0 +1,39 @@
+{
+  "body": {
+    "profiles": [
+      {
+        "PK": "123foobar",
+        "updated": 111111111,
+        "name": "Foo",
+        "disable_ttl": 1693303746,
+        "profile": {
+          "flt": {
+            "count": 0
+          },
+          "cflt": {
+            "count": 0
+          },
+          "ipflt": {
+            "count": 0
+          },
+          "rule": {
+            "count": 0
+          },
+          "svc": {
+            "count": 0
+          },
+          "grp": {
+            "count": 0
+          },
+          "opt": {
+            "count": 0,
+            "data": []
+          },
+          "da": []
+        }
+      }
+    ]
+  },
+  "success": true,
+  "message": "Profile has been updated"
+}
