@@ -22,8 +22,12 @@ class ControlDFactory
             ->withToken($this->config->get('controld.secret'))
             ->retry(3, 250, new RetryCallback());
 
-        foreach ($this->config->get('controld.middleware') ?? [] as $middleware) {
-            $this->request->withMiddleware(app($middleware));
+        foreach ($this->config->get('controld.middleware.request', []) as $middleware) {
+            $this->request->withRequestMiddleware(new $middleware());
+        }
+
+        foreach ($this->config->get('controld.middleware.response', []) as $middleware) {
+            $this->request->withResponseMiddleware(new $middleware());
         }
 
         return new ControlD($this->request);
