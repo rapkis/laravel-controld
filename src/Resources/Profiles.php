@@ -5,25 +5,18 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
-use Rapkis\Controld\Entities\ServiceAction;
-use Rapkis\Controld\Factories\FilterFactory;
 use Rapkis\Controld\Factories\ProfileFactory;
-use Rapkis\Controld\Factories\ProfileOptionFactory;
-use Rapkis\Controld\Factories\ServiceFactory;
-use Rapkis\Controld\Responses\Filters;
+use Rapkis\Controld\Resources\Profiles\Filters;
+use Rapkis\Controld\Resources\Profiles\Options;
+use Rapkis\Controld\Resources\Profiles\Services;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
-use Rapkis\Controld\Responses\ProfileOptions;
-use Rapkis\Controld\Responses\Services;
 
 class Profiles
 {
     public function __construct(
-        private PendingRequest $client,
-        private ProfileFactory $profile,
-        private ProfileOptionFactory $option,
-        private FilterFactory $filter,
-        private ServiceFactory $service,
+        private readonly PendingRequest $client,
+        private readonly ProfileFactory $profile,
     ) {
     }
 
@@ -68,96 +61,18 @@ class Profiles
         return true;
     }
 
-    public function options(): ProfileOptions
+    public function options(): Options
     {
-        $response = $this->client->get('profiles/options')->json('body.options');
-
-        $result = new ProfileOptions();
-
-        foreach ($response as $option) {
-            $option = $this->option->make($option);
-            $result->put($option->pk, $option);
-        }
-
-        return $result;
+        return app(Options::class, ['client' => $this->client]);
     }
 
-    /**
-     * At the time of writing, ControlD only supports on/of values,
-     * even though ai_malware option does not accept those.
-     * This may change, after this experimental option is finalised.
-     */
-    public function modifyOption(string $profilePk, string $optionPk, bool $enable): bool
+    public function filters(): Filters
     {
-        $this->client->put("profiles/{$profilePk}/options/{$optionPk}", [
-            'status' => (int) $enable,
-        ]);
-
-        return true;
+        return app(Filters::class, ['client' => $this->client]);
     }
 
-    public function listNativeFilters(string $profilePk): Filters
+    public function services(): Services
     {
-        $response = $this->client->get("profiles/{$profilePk}/filters")->json('body.filters');
-
-        $result = new Filters();
-
-        foreach ($response as $filter) {
-            $filter = $this->filter->make($filter);
-            $result[$filter->pk] = $filter;
-        }
-
-        return $result;
-    }
-
-    public function listThirdPartyFilters(string $profilePk): Filters
-    {
-        $response = $this->client->get("profiles/{$profilePk}/filters/external")->json('body.filters');
-
-        $result = new Filters();
-
-        foreach ($response as $filter) {
-            $filter = $this->filter->make($filter);
-            $result[$filter->pk] = $filter;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Enable or disable a filter for a profile.
-     * Returns a list of filter PKs
-     *
-     * @return array<string>
-     */
-    public function modifyFilters(string $profilePk, string $filterPk, bool $enable): array
-    {
-        return $this->client->put("profiles/{$profilePk}/filters/filter/{$filterPk}", ['status' => (int) $enable])
-            ->json('body.filters');
-    }
-
-    public function listServices(string $profilePk): Services
-    {
-        $response = $this->client->get("profiles/{$profilePk}/services")->json('body.services');
-
-        $result = new Services();
-
-        foreach ($response as $service) {
-            $service = $this->service->make($service);
-            $result[$service->pk] = $service;
-        }
-
-        return $result;
-    }
-
-    public function modifyService(string $profilePk, string $servicePk, ServiceAction $action): bool
-    {
-        $this->client->put("profiles/{$profilePk}/services/{$servicePk}", [
-            'do' => $action->do,
-            'status' => (int) $action->status,
-            'via' => $action->via,
-        ]);
-
-        return true;
+        return app(Services::class, ['client' => $this->client]);
     }
 }
