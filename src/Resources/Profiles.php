@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
+use Rapkis\Controld\Entities\ServiceAction;
 use Rapkis\Controld\Factories\FilterFactory;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
+use Rapkis\Controld\Factories\ServiceFactory;
 use Rapkis\Controld\Responses\Filters;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
+use Rapkis\Controld\Responses\Services;
 
 class Profiles
 {
@@ -20,6 +23,7 @@ class Profiles
         private ProfileFactory $profile,
         private ProfileOptionFactory $option,
         private FilterFactory $filter,
+        private ServiceFactory $service,
     ) {
     }
 
@@ -130,5 +134,30 @@ class Profiles
     {
         return $this->client->put("profiles/{$profilePk}/filters/filter/{$filterPk}", ['status' => (int) $enable])
             ->json('body.filters');
+    }
+
+    public function listServices(string $profilePk): Services
+    {
+        $response = $this->client->get("profiles/{$profilePk}/services")->json('body.services');
+
+        $result = new Services();
+
+        foreach ($response as $service) {
+            $service = $this->service->make($service);
+            $result[$service->pk] = $service;
+        }
+
+        return $result;
+    }
+
+    public function modifyService(string $profilePk, string $servicePk, ServiceAction $action): bool
+    {
+        $this->client->put("profiles/{$profilePk}/services/{$servicePk}", [
+            'do' => $action->do,
+            'status' => (int) $action->status,
+            'via' => $action->via,
+        ]);
+
+        return true;
     }
 }

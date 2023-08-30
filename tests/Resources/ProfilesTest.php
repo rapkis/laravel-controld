@@ -3,14 +3,17 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
+use Rapkis\Controld\Entities\ServiceAction;
 use Rapkis\Controld\Factories\FilterFactory;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
+use Rapkis\Controld\Factories\ServiceFactory;
 use Rapkis\Controld\Resources\Profiles;
 use Rapkis\Controld\Responses\Filters;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
+use Rapkis\Controld\Responses\Services;
 
 beforeEach(function () {
     Http::preventStrayRequests();
@@ -26,6 +29,7 @@ it('lists profiles', function () {
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->list();
@@ -44,6 +48,7 @@ it('creates a profile', function () {
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->create('Test name');
@@ -61,6 +66,7 @@ it('modifies a profile', function () {
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->modify('123foobar');
@@ -78,6 +84,7 @@ it('deletes a profile', function () {
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->delete('123foobar');
@@ -95,6 +102,7 @@ it('lists profile options', function () {
         $this->createStub(ProfileFactory::class),
         app(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->options();
@@ -113,6 +121,7 @@ it('can modify profile option', function () {
         $this->createStub(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     expect($resource->modifyOption('profile_pk', 'option_pk', true))->toBeTrue();
@@ -128,6 +137,7 @@ it('lists native profile filters', function () {
         $this->createStub(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         app(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->listNativeFilters('profile_pk');
@@ -146,6 +156,7 @@ it('lists third party profile filters', function () {
         $this->createStub(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         app(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->listThirdPartyFilters('profile_pk');
@@ -164,6 +175,7 @@ it('modifies a filter for a profile', function () {
         $this->createStub(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
         $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
     );
 
     $result = $resource->modifyFilters('profile_pk', 'ads', true);
@@ -172,4 +184,45 @@ it('modifies a filter for a profile', function () {
         ->and($result[0])->toEqual('ads')
         ->and($result[1])->toEqual('iot')
         ->and($result[2])->toEqual('malware');
+});
+
+it('lists profile services', function () {
+    $request = Http::fake([
+        'profiles/profile_pk/services' => Http::response(mockJsonEndpoint('profiles-services-list')),
+    ])->asJson();
+
+    $resource = new Profiles(
+        $request,
+        $this->createStub(ProfileFactory::class),
+        $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
+        app(ServiceFactory::class),
+    );
+
+    $result = $resource->listServices('profile_pk');
+
+    expect($result)->toBeInstanceOf(Services::class)
+        ->and($result)->toHaveCount(4);
+});
+
+it('modifies a service for a profile', function () {
+    $request = Http::fake([
+        'profiles/profile_pk/services/service' => Http::response(mockJsonEndpoint('profiles-services-modify')),
+    ])->asJson();
+
+    $resource = new Profiles(
+        $request,
+        $this->createStub(ProfileFactory::class),
+        $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
+        $this->createStub(ServiceFactory::class),
+    );
+
+    $result = $resource->modifyService('profile_pk', 'service', new ServiceAction(
+        do: 0,
+        status: true,
+        via: null,
+    ));
+
+    expect($result)->toBeTrue();
 });

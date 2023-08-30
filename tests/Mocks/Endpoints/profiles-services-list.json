@@ -1,0 +1,54 @@
+{
+    "body": {
+        "services": [
+            {
+                "category": "video",
+                "name": "BBC iPlayer",
+                "locations": [
+                    "LHR",
+                    "EDI",
+                    "MAN"
+                ],
+                "unlock_location": "LHR",
+                "PK": "iplayer",
+                "action": {
+                    "do": 3,
+                    "via": "LHR",
+                    "status": 0
+                }
+            },
+            {
+                "name": "Facebook",
+                "unlock_location": "JFK",
+                "category": "social",
+                "PK": "facebook",
+                "action": {
+                    "do": 0,
+                    "status": 0
+                }
+            },
+            {
+                "name": "Prime Video",
+                "unlock_location": "JFK",
+                "category": "video",
+                "PK": "primevideo",
+                "action": {
+                    "do": 1,
+                    "status": 0
+                }
+            },
+            {
+                "name": "Youtube",
+                "unlock_location": "DFW",
+                "category": "video",
+                "PK": "youtube",
+                "action": {
+                    "do": 3,
+                    "via": "KIV",
+                    "status": 1
+                }
+            }
+        ]
+    },
+    "success": true
+}
