@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
+use Rapkis\Controld\Factories\FilterFactory;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
+use Rapkis\Controld\Responses\Filters;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
@@ -17,6 +19,7 @@ class Profiles
         private PendingRequest $client,
         private ProfileFactory $profile,
         private ProfileOptionFactory $option,
+        private FilterFactory $filter,
     ) {
     }
 
@@ -87,5 +90,33 @@ class Profiles
         ]);
 
         return true;
+    }
+
+    public function listNativeFilters(string $profilePk): Filters
+    {
+        $response = $this->client->get("profiles/{$profilePk}/filters")->json('body.filters');
+
+        $result = new Filters();
+
+        foreach ($response as $filter) {
+            $filter = $this->filter->make($filter);
+            $result[$filter->pk] = $filter;
+        }
+
+        return $result;
+    }
+
+    public function listThirdPartyFilters(string $profilePk): Filters
+    {
+        $response = $this->client->get("profiles/{$profilePk}/filters/external")->json('body.filters');
+
+        $result = new Filters();
+
+        foreach ($response as $filter) {
+            $filter = $this->filter->make($filter);
+            $result[$filter->pk] = $filter;
+        }
+
+        return $result;
     }
 }

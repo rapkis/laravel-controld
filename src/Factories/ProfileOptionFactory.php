@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Rapkis\Controld\Factories;
 
+use Rapkis\Controld\Contracts\Factories\Factory;
 use Rapkis\Controld\Entities\ProfileOption;
 
-class ProfileOptionFactory
+class ProfileOptionFactory implements Factory
 {
     public function make(array $data): ProfileOption
     {
