@@ -119,4 +119,16 @@ class Profiles
 
         return $result;
     }
+
+    /**
+     * Enable or disable a filter for a profile.
+     * Returns a list of filter PKs
+     *
+     * @return array<string>
+     */
+    public function modifyFilters(string $profilePk, string $filterPk, bool $enable): array
+    {
+        return $this->client->put("profiles/{$profilePk}/filters/filter/{$filterPk}", ['status' => (int) $enable])
+            ->json('body.filters');
+    }
 }

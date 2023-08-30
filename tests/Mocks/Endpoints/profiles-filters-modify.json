@@ -1,0 +1,10 @@
+{
+    "body": {
+        "filters": [
+            "ads",
+            "iot",
+            "malware"
+        ]
+    },
+    "success": true
+}
