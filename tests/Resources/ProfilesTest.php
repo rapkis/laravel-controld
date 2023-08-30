@@ -153,3 +153,23 @@ it('lists third party profile filters', function () {
     expect($result)->toBeInstanceOf(Filters::class)
         ->and($result)->toHaveCount(14);
 });
+
+it('modifies a filter for a profile', function () {
+    $request = Http::fake([
+        'profiles/profile_pk/filters/filter/ads' => Http::response(mockJsonEndpoint('profiles-filters-modify')),
+    ])->asJson();
+
+    $resource = new Profiles(
+        $request,
+        $this->createStub(ProfileFactory::class),
+        $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
+    );
+
+    $result = $resource->modifyFilters('profile_pk', 'ads', true);
+
+    expect($result)->toHaveCount(3)
+        ->and($result[0])->toEqual('ads')
+        ->and($result[1])->toEqual('iot')
+        ->and($result[2])->toEqual('malware');
+});
