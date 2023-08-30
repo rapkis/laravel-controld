@@ -4,28 +4,29 @@ declare(strict_types=1);
 
 namespace Rapkis\Controld\Factories;
 
+use Rapkis\Controld\Contracts\Factories\Factory;
 use Rapkis\Controld\Entities\ProfileFilters;
 use Rapkis\Controld\Responses\Profile;
 
-class ProfileFactory
+class ProfileFactory implements Factory
 {
-    public function make(array $profile): Profile
+    public function make(array $data): Profile
     {
         return new Profile(
-            pk: $profile['PK'],
-            updated: $profile['updated'],
-            name: $profile['name'],
-            disableTtl: $profile['disable_ttl'] ?? null,
-            stats: $profile['stats'] ?? null,
+            pk: $data['PK'],
+            updated: $data['updated'],
+            name: $data['name'],
+            disableTtl: $data['disable_ttl'] ?? null,
+            stats: $data['stats'] ?? null,
             filters: new ProfileFilters(
-                flt: $profile['profile']['flt'],
-                cflt: $profile['profile']['cflt'],
-                ipflt: $profile['profile']['ipflt'],
-                rule: $profile['profile']['rule'],
-                svc: $profile['profile']['svc'],
-                grp: $profile['profile']['grp'],
-                opt: $profile['profile']['opt'],
-                da: $profile['profile']['da'],
+                flt: $data['profile']['flt'],
+                cflt: $data['profile']['cflt'],
+                ipflt: $data['profile']['ipflt'],
+                rule: $data['profile']['rule'],
+                svc: $data['profile']['svc'],
+                grp: $data['profile']['grp'],
+                opt: $data['profile']['opt'],
+                da: $data['profile']['da'],
             )
         );
     }

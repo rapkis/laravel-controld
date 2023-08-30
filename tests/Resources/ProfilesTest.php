@@ -3,9 +3,11 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
+use Rapkis\Controld\Factories\FilterFactory;
 use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
 use Rapkis\Controld\Resources\Profiles;
+use Rapkis\Controld\Responses\Filters;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
 use Rapkis\Controld\Responses\ProfileOptions;
@@ -23,6 +25,7 @@ it('lists profiles', function () {
         $request,
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     $result = $resource->list();
@@ -40,6 +43,7 @@ it('creates a profile', function () {
         $request,
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     $result = $resource->create('Test name');
@@ -56,6 +60,7 @@ it('modifies a profile', function () {
         $request,
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     $result = $resource->modify('123foobar');
@@ -72,6 +77,7 @@ it('deletes a profile', function () {
         $request,
         app(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     $result = $resource->delete('123foobar');
@@ -88,6 +94,7 @@ it('lists profile options', function () {
         $request,
         $this->createStub(ProfileFactory::class),
         app(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     $result = $resource->options();
@@ -105,7 +112,44 @@ it('can modify profile option', function () {
         $request,
         $this->createStub(ProfileFactory::class),
         $this->createStub(ProfileOptionFactory::class),
+        $this->createStub(FilterFactory::class),
     );
 
     expect($resource->modifyOption('profile_pk', 'option_pk', true))->toBeTrue();
+});
+
+it('lists native profile filters', function () {
+    $request = Http::fake([
+        'profiles/profile_pk/filters' => Http::response(mockJsonEndpoint('profiles-filters-list-native')),
+    ])->asJson();
+
+    $resource = new Profiles(
+        $request,
+        $this->createStub(ProfileFactory::class),
+        $this->createStub(ProfileOptionFactory::class),
+        app(FilterFactory::class),
+    );
+
+    $result = $resource->listNativeFilters('profile_pk');
+
+    expect($result)->toBeInstanceOf(Filters::class)
+        ->and($result)->toHaveCount(18);
+});
+
+it('lists third party profile filters', function () {
+    $request = Http::fake([
+        'profiles/profile_pk/filters/external' => Http::response(mockJsonEndpoint('profiles-filters-list-third-party')),
+    ])->asJson();
+
+    $resource = new Profiles(
+        $request,
+        $this->createStub(ProfileFactory::class),
+        $this->createStub(ProfileOptionFactory::class),
+        app(FilterFactory::class),
+    );
+
+    $result = $resource->listThirdPartyFilters('profile_pk');
+
+    expect($result)->toBeInstanceOf(Filters::class)
+        ->and($result)->toHaveCount(14);
 });
