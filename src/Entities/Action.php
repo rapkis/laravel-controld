@@ -12,6 +12,7 @@ class Action
         public readonly bool $status,
         public readonly ?int $do,
         public readonly ?string $via,
+        public readonly ?int $ttl,
     ) {
         // TODO validate do. also make sure via is required if do = 2 or 3
         //        if ($this->do < 0 || $this->do > 3) {

@@ -38,9 +38,10 @@ it('modifies a service for a profile', function () {
     );
 
     $result = $resource->modify('profile_pk', 'service', new Action(
-        do: 0,
         status: true,
+        do: 0,
         via: null,
+        ttl: null,
     ));
 
     expect($result)->toBeTrue();

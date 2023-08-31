@@ -38,7 +38,7 @@ it('creates a profile rule folder', function () {
         app(RuleFolderFactory::class),
     );
 
-    $result = $resource->create('profile_pk', 'name', new Action(true, 3, 'YYZ'));
+    $result = $resource->create('profile_pk', 'name', new Action(true, 3, 'YYZ', null));
 
     expect($result)->toBeInstanceOf(RuleFolder::class);
 });
@@ -53,7 +53,7 @@ it('modifies the rule folder', function () {
         app(RuleFolderFactory::class),
     );
 
-    $result = $resource->modify('profile_pk', 1, 'name', new Action(true, 3, 'YYZ'));
+    $result = $resource->modify('profile_pk', 1, 'name', new Action(true, 3, 'YYZ', null));
 
     expect($result)->toBeInstanceOf(RuleFolder::class);
 });

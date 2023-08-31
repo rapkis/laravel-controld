@@ -6,8 +6,10 @@ namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\Factories\ProfileFactory;
+use Rapkis\Controld\Resources\Profiles\CustomRules;
 use Rapkis\Controld\Resources\Profiles\Filters;
 use Rapkis\Controld\Resources\Profiles\Options;
+use Rapkis\Controld\Resources\Profiles\RuleFolders;
 use Rapkis\Controld\Resources\Profiles\Services;
 use Rapkis\Controld\Responses\Profile;
 use Rapkis\Controld\Responses\ProfileList;
@@ -74,5 +76,15 @@ class Profiles
     public function services(): Services
     {
         return app(Services::class, ['client' => $this->client]);
+    }
+
+    public function ruleFolders(): RuleFolders
+    {
+        return app(RuleFolders::class, ['client' => $this->client]);
+    }
+
+    public function customRules(): CustomRules
+    {
+        return app(CustomRules::class, ['client' => $this->client]);
     }
 }
