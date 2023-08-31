@@ -19,7 +19,7 @@ it('builds a rule folder', function (array $data, RuleFolder $expected) {
         new RuleFolder(
             pk: 1,
             group: 'Folder Name',
-            action: new Action(true, null, null),
+            action: new Action(true, null, null, null),
             count: 0,
         ),
     ],
@@ -37,7 +37,7 @@ it('builds a rule folder', function (array $data, RuleFolder $expected) {
         new RuleFolder(
             pk: 1,
             group: 'Redirect everything',
-            action: new Action(true, 3, 'LOCAL'),
+            action: new Action(true, 3, 'LOCAL', null),
             count: 1,
         ),
     ],
@@ -54,7 +54,7 @@ it('builds a rule folder', function (array $data, RuleFolder $expected) {
         new RuleFolder(
             pk: 1,
             group: 'Block everything',
-            action: new Action(true, 0, null),
+            action: new Action(true, 0, null, null),
             count: 2,
         ),
     ],

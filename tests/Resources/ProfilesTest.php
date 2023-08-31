@@ -100,3 +100,21 @@ it('accesses services', function () {
 
     expect($resource->services())->toBeInstanceOf(Profiles\Services::class);
 });
+
+it('accesses rule folders', function () {
+    $resource = new Profiles(
+        $this->createStub(PendingRequest::class),
+        $this->createStub(ProfileFactory::class),
+    );
+
+    expect($resource->ruleFolders())->toBeInstanceOf(Profiles\RuleFolders::class);
+});
+
+it('accesses custom rules', function () {
+    $resource = new Profiles(
+        $this->createStub(PendingRequest::class),
+        $this->createStub(ProfileFactory::class),
+    );
+
+    expect($resource->customRules())->toBeInstanceOf(Profiles\CustomRules::class);
+});

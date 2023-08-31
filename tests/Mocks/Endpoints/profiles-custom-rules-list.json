@@ -1,0 +1,36 @@
+{
+    "body": {
+        "rules": [
+            {
+                "PK": "test.com",
+                "order": 1,
+                "group": 1,
+                "action": {
+                    "do": 0,
+                    "status": 1,
+                    "ttl": 1693515600
+                }
+            },
+            {
+                "PK": "foo.bar",
+                "order": 2,
+                "group": 1,
+                "action": {
+                    "do": 0,
+                    "status": 1
+                }
+            },
+            {
+                "PK": "derp123.com",
+                "order": 12,
+                "group": 0,
+                "action": {
+                    "do": 2,
+                    "via": "1.2.3.4",
+                    "status": 1
+                }
+            }
+        ]
+    },
+    "success": true
+}

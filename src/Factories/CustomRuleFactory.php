@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Factories;
 
 use Rapkis\Controld\Contracts\Factories\Factory;
-use Rapkis\Controld\Responses\RuleFolder;
+use Rapkis\Controld\Responses\CustomRule;
 
-class RuleFolderFactory implements Factory
+class CustomRuleFactory implements Factory
 {
-    public function make(array $data): RuleFolder
+    public function make(array $data): CustomRule
     {
-        return new RuleFolder(
+        return new CustomRule(
             pk: $data['PK'],
+            order: $data['order'],
             group: $data['group'],
             action: (new ActionFactory())->make($data['action']),
-            count: $data['count'],
         );
     }
 }

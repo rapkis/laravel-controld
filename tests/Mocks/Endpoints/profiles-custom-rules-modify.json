@@ -1,0 +1,14 @@
+{
+    "body": {
+        "rules": [
+            {
+                "do": 2,
+                "status": 0,
+                "via": "127.0.0.1",
+                "group": 0,
+                "order": 2
+            }
+        ]
+    },
+    "success": true
+}
