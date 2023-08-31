@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\CustomRuleFactory;
+use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\CustomRule;
 
 it('builds a custom rule', function (array $data, CustomRule $expected) {

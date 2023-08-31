@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\RuleFolderFactory;
+use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\RuleFolder;
 
 it('builds a rule folder', function (array $data, RuleFolder $expected) {

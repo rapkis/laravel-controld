@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\RuleFolderFactory;
 use Rapkis\Controld\Resources\Profiles\RuleFolders;
+use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\RuleFolder;
 
 beforeEach(function () {

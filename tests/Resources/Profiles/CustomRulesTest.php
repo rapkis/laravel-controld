@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\CustomRuleFactory;
 use Rapkis\Controld\Resources\Profiles\CustomRules;
+use Rapkis\Controld\Responses\Action;
 
 beforeEach(function () {
     Http::preventStrayRequests();
