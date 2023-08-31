@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources\Profiles;
 
 use Illuminate\Http\Client\PendingRequest;
-use Rapkis\Controld\Entities\ServiceAction;
+use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\ServiceFactory;
 
 class Services
@@ -28,7 +28,7 @@ class Services
         return $result;
     }
 
-    public function modify(string $profilePk, string $servicePk, ServiceAction $action): bool
+    public function modify(string $profilePk, string $servicePk, Action $action): bool
     {
         $this->client->put("profiles/{$profilePk}/services/{$servicePk}", [
             'do' => $action->do,

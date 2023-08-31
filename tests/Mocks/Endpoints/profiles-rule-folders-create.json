@@ -1,0 +1,17 @@
+{
+    "body": {
+        "groups": [
+            {
+                "PK": 5,
+                "group": "Folder Name 2",
+                "action": {
+                    "do": 3,
+                    "via": "YYZ",
+                    "status": 1
+                },
+                "count": 0
+            }
+        ]
+    },
+    "success": true
+}

@@ -13,7 +13,7 @@ class Service
         public readonly string $unlockLocation,
         public readonly array $locations,
         public readonly ?string $warning,
-        public readonly ?ServiceAction $action,
+        public readonly ?Action $action,
     ) {
     }
 }

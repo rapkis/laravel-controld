@@ -1,0 +1,34 @@
+{
+    "body": {
+        "groups": [
+            {
+                "PK": 1,
+                "group": "Simple Folder",
+                "action": {
+                    "status": 1
+                },
+                "count": 0
+            },
+            {
+                "PK": 2,
+                "group": "redirect everything",
+                "action": {
+                    "do": 3,
+                    "via": "LOCAL",
+                    "status": 1
+                },
+                "count": 1
+            },
+            {
+                "PK": 3,
+                "group": "Block Everything",
+                "action": {
+                    "do": 0,
+                    "status": 1
+                },
+                "count": 2
+            }
+        ]
+    },
+    "success": true
+}
