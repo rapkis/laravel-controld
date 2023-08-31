@@ -10,6 +10,7 @@ use Rapkis\Controld\Resources\Profiles\CustomRules;
 use Rapkis\Controld\Resources\Profiles\DefaultRule;
 use Rapkis\Controld\Resources\Profiles\Filters;
 use Rapkis\Controld\Resources\Profiles\Options;
+use Rapkis\Controld\Resources\Profiles\Proxies;
 use Rapkis\Controld\Resources\Profiles\RuleFolders;
 use Rapkis\Controld\Resources\Profiles\Services;
 use Rapkis\Controld\Responses\Profile;
@@ -92,5 +93,10 @@ class Profiles
     public function defaultRule(): DefaultRule
     {
         return app(DefaultRule::class, ['client' => $this->client]);
+    }
+
+    public function proxies(): Proxies
+    {
+        return app(Proxies::class, ['client' => $this->client]);
     }
 }
