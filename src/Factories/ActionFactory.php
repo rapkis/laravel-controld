@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Factories;
 
 use Rapkis\Controld\Contracts\Factories\Factory;
-use Rapkis\Controld\Entities\Action;
+use Rapkis\Controld\Responses\Action;
 
 class ActionFactory implements Factory
 {

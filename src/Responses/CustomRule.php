@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Rapkis\Controld\Responses;
 
-use Rapkis\Controld\Entities\Action;
-
 class CustomRule
 {
     public function __construct(

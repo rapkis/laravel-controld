@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rapkis\Controld\Entities;
+namespace Rapkis\Controld\Responses;
 
 use InvalidArgumentException;
 

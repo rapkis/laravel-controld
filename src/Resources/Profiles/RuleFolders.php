@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources\Profiles;
 
 use Illuminate\Http\Client\PendingRequest;
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\RuleFolderFactory;
+use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\RuleFolder;
 
 class RuleFolders

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Rapkis\Controld\Entities;
 
+use Rapkis\Controld\Responses\Action;
+
 class Service
 {
     public function __construct(

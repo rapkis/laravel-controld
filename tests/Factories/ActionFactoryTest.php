@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\ActionFactory;
+use Rapkis\Controld\Responses\Action;
 
 it('builds an action', function (array $data, Action $expected) {
     expect((new ActionFactory())->make($data))->toEqual($expected);

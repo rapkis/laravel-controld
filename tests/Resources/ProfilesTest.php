@@ -118,3 +118,12 @@ it('accesses custom rules', function () {
 
     expect($resource->customRules())->toBeInstanceOf(Profiles\CustomRules::class);
 });
+
+it('accesses default rule', function () {
+    $resource = new Profiles(
+        $this->createStub(PendingRequest::class),
+        $this->createStub(ProfileFactory::class),
+    );
+
+    expect($resource->defaultRule())->toBeInstanceOf(Profiles\DefaultRule::class);
+});
