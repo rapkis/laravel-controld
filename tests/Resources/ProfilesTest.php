@@ -127,3 +127,12 @@ it('accesses default rule', function () {
 
     expect($resource->defaultRule())->toBeInstanceOf(Profiles\DefaultRule::class);
 });
+
+it('accesses proxies', function () {
+    $resource = new Profiles(
+        $this->createStub(PendingRequest::class),
+        $this->createStub(ProfileFactory::class),
+    );
+
+    expect($resource->proxies())->toBeInstanceOf(Profiles\Proxies::class);
+});
