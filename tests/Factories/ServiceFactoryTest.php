@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Entities\Service;
-use Rapkis\Controld\Entities\ServiceAction;
 use Rapkis\Controld\Factories\ServiceFactory;
 
 it('builds a service', function (array $data, Service $expected) {
@@ -46,9 +46,9 @@ it('builds a service', function (array $data, Service $expected) {
             unlockLocation: 'JFK',
             locations: [],
             warning: 'foo',
-            action: new ServiceAction(
-                do: 0,
+            action: new Action(
                 status: false,
+                do: 0,
                 via: null,
             ),
         ),
@@ -72,9 +72,9 @@ it('builds a service', function (array $data, Service $expected) {
             unlockLocation: 'JFK',
             locations: [],
             warning: null,
-            action: new ServiceAction(
-                do: 1,
+            action: new Action(
                 status: true,
+                do: 1,
                 via: null,
             ),
         ),
@@ -98,9 +98,9 @@ it('builds a service', function (array $data, Service $expected) {
             unlockLocation: 'JFK',
             locations: [],
             warning: null,
-            action: new ServiceAction(
-                do: 2,
+            action: new Action(
                 status: false,
+                do: 2,
                 via: null,
             ),
         ),
@@ -125,9 +125,9 @@ it('builds a service', function (array $data, Service $expected) {
             unlockLocation: 'JFK',
             locations: ['FOO', 'BAR'],
             warning: null,
-            action: new ServiceAction(
-                do: 3,
+            action: new Action(
                 status: false,
+                do: 3,
                 via: 'CITY',
             ),
         ),

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
-use Rapkis\Controld\Entities\ServiceAction;
+use Rapkis\Controld\Entities\Action;
 use Rapkis\Controld\Factories\ServiceFactory;
 use Rapkis\Controld\Resources\Profiles\Services;
 
@@ -37,7 +37,7 @@ it('modifies a service for a profile', function () {
         $this->createStub(ServiceFactory::class),
     );
 
-    $result = $resource->modify('profile_pk', 'service', new ServiceAction(
+    $result = $resource->modify('profile_pk', 'service', new Action(
         do: 0,
         status: true,
         via: null,
