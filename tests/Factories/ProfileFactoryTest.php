@@ -91,4 +91,19 @@ it('builds a profile', function (array $data, Profile $expected) {
             )
         ),
     ],
+    [
+        [
+            'PK' => '123test123',
+            'updated' => 111111111,
+            'name' => 'Test',
+        ],
+        new Profile(
+            pk: '123test123',
+            updated: 111111111,
+            name: 'Test',
+            disableTtl: null,
+            stats: null,
+            filters: null,
+        ),
+    ],
 ]);
