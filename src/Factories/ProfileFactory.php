@@ -12,13 +12,8 @@ class ProfileFactory implements Factory
 {
     public function make(array $data): Profile
     {
-        return new Profile(
-            pk: $data['PK'],
-            updated: $data['updated'],
-            name: $data['name'],
-            disableTtl: $data['disable_ttl'] ?? null,
-            stats: $data['stats'] ?? null,
-            filters: new ProfileFilters(
+        if (! empty($data['profile'])) {
+            $filters = new ProfileFilters(
                 flt: $data['profile']['flt'],
                 cflt: $data['profile']['cflt'],
                 ipflt: $data['profile']['ipflt'],
@@ -27,7 +22,16 @@ class ProfileFactory implements Factory
                 grp: $data['profile']['grp'],
                 opt: $data['profile']['opt'],
                 da: $data['profile']['da'],
-            )
+            );
+        }
+
+        return new Profile(
+            pk: $data['PK'],
+            updated: $data['updated'],
+            name: $data['name'],
+            disableTtl: $data['disable_ttl'] ?? null,
+            stats: $data['stats'] ?? null,
+            filters: $filters ?? null,
         );
     }
 }

@@ -14,7 +14,7 @@ class Profile
         public readonly string $name,
         public readonly ?int $disableTtl,
         public readonly ?int $stats,
-        public readonly ProfileFilters $filters,
+        public readonly ?ProfileFilters $filters,
     ) {
     }
 }

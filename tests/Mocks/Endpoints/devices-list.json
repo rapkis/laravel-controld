@@ -1,0 +1,96 @@
+{
+    "body": {
+        "devices": [
+            {
+                "PK": "dummy_pk",
+                "ts": 1669593191,
+                "name": "not-default-device",
+                "device_id": "dummy_device",
+                "status": 1,
+                "learn_ip": 1,
+                "resolvers": {
+                    "uid": "2bmen1byrpr",
+                    "doh": "https://dns.controld.dev/2bmen1byrpr",
+                    "dot": "2bmen1byrpr.dns.controld.dev",
+                    "v4": [
+                        "176.125.239.187",
+                        "176.125.53.187"
+                    ],
+                    "v6": [
+                        "2606:1a40:f000:1e:2c0e:761:3fcf:0",
+                        "2606:1a40:f001:1e:2c0e:761:3fcf:0"
+                    ]
+                },
+                "profile": {
+                    "PK": "4054dvb42i",
+                    "updated": 1670294164,
+                    "name": "Totally Not Default Profile"
+                }
+            },
+            {
+                "PK": "2bmen1byrpr",
+                "ts": 1669593191,
+                "name": "not-default-device",
+                "stats": 2,
+                "device_id": "2bmen1byrpr",
+                "status": 1,
+                "restricted": 0,
+                "learn_ip": 1,
+                "desc": "Comment goes here 2",
+                "ddns": {
+                    "status": 1,
+                    "subdomain": "my-private-subdomain2",
+                    "hostname": "my-private-subdomain2.controld.xyz",
+                    "record": "2607:f0c8:8000:8210:1c7b:b482:1c88:e893"
+                },
+                "ddns_ext": {
+                    "status": 1,
+                    "host": "test.com"
+                },
+                "resolvers": {
+                    "uid": "2bmen1byrpr",
+                    "doh": "https://dns.controld.dev/2bmen1byrpr",
+                    "dot": "2bmen1byrpr.dns.controld.dev",
+                    "v4": [
+                        "176.125.239.187",
+                        "176.125.53.187"
+                    ],
+                    "v6": [
+                        "2606:1a40:f000:1e:2c0e:761:3fcf:0",
+                        "2606:1a40:f001:1e:2c0e:761:3fcf:0"
+                    ]
+                },
+                "legacy_ipv4": {
+                    "resolver": "176.125.239.187",
+                    "status": 1
+                },
+                "profile": {
+                    "PK": "4054dvb42i",
+                    "updated": 1670294164,
+                    "name": "Totally Not Default Profile"
+                }
+            },
+            {
+                "PK": "hl7r34ku0f",
+                "ts": 1670036258,
+                "name": "test-01",
+                "device_id": "hl7r34ku0f",
+                "status": 1,
+                "icon": "desktop-windows",
+                "learn_ip": 1,
+                "resolvers": {
+                    "uid": "hl7r34ku0f",
+                    "doh": "https://dns.controld.dev/hl7r34ku0f",
+                    "dot": "hl7r34ku0f.dns.controld.dev"
+                },
+                "profile": {
+                    "PK": "4054dvb42i",
+                    "updated": 1670294164,
+                    "name": "Totally Not Default Profile"
+                }
+            }
+        ],
+        "activity": false
+    },
+    "success": true
+}
