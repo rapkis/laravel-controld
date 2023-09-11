@@ -38,6 +38,7 @@ class DeviceFactory implements Factory
             learnIp: (bool) $data['learn_ip'],
             resolvers: $this->makeResolvers($data['resolvers']),
             profile: (new ProfileFactory())->make($data['profile']),
+            profile2: ! empty($data['profile2']) ? (new ProfileFactory())->make($data['profile2']) : null,
             description: $data['description'] ?? '',
             stats: DeviceAnalytics::tryFrom($data['stats'] ?? null),
             icon: $data['icon'] ?? null,

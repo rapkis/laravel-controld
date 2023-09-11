@@ -23,6 +23,7 @@ class Device
         public readonly bool $learnIp,
         public readonly array $resolvers,
         public readonly Profile $profile,
+        public readonly ?Profile $profile2,
         public readonly string $description,
         public readonly DeviceAnalytics $stats,
         public readonly ?string $icon,
