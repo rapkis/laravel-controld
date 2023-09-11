@@ -1,0 +1,43 @@
+{
+    "body": {
+        "PK": "device_pk",
+        "ts": 1111111111,
+        "name": "device_name",
+        "device_id": "device_pk",
+        "status": 0,
+        "icon": "mobile-android",
+        "learn_ip": 0,
+        "bump_tls": 1,
+        "ddns": {
+            "status": 1,
+            "subdomain": "test",
+            "hostname": "test.controld.live",
+            "record": "0.0.0.0"
+        },
+        "ddns_ext": {
+            "status": 1,
+            "host": "external.example.com"
+        },
+        "resolvers": {
+            "uid": "resolver_uid",
+            "doh": "https://dns.controld.com/resolver_uid",
+            "dot": "resolver_uid.dns.controld.com",
+            "v6": [
+                "2606:1a40::2",
+                "22606:1a40:1::2"
+            ]
+        },
+        "profile": {
+            "PK": "profile_pk",
+            "updated": 1111111111,
+            "name": "Foo Profile"
+        },
+        "profile2": {
+            "PK": "profile_2_pk",
+            "updated": 1111111111,
+            "name": "Bar Profile"
+        }
+    },
+    "success": true,
+    "message": "Device has been added"
+}
