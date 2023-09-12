@@ -6,13 +6,16 @@ namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\Factories\DeviceFactory;
+use Rapkis\Controld\Factories\DeviceTypeFactory;
 use Rapkis\Controld\Responses\Device;
+use Rapkis\Controld\Responses\DeviceTypes;
 
 class Devices
 {
     public function __construct(
         private readonly PendingRequest $client,
         private readonly DeviceFactory $device,
+        private readonly DeviceTypeFactory $deviceType,
     ) {
     }
 
@@ -63,5 +66,20 @@ class Devices
         ])->json('body');
 
         return $this->device->make($response);
+    }
+
+    public function types(): DeviceTypes
+    {
+        $response = $this->client->get('devices/types')->json('body.types');
+
+        $result = new DeviceTypes();
+
+        foreach ($response as $type => $deviceType) {
+            $deviceType['type'] = $type;
+            $deviceType = $this->deviceType->make($deviceType);
+            $result->put($deviceType->type, $deviceType);
+        }
+
+        return $result;
     }
 }

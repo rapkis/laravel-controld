@@ -1,0 +1,48 @@
+{
+    "body": {
+        "types": {
+            "os": {
+                "name": "Desktop & Mobile",
+                "icons": {
+                    "desktop-windows": "Windows",
+                    "desktop-mac": "Mac",
+                    "desktop-linux": "Linux",
+                    "mobile-ios": "iOS",
+                    "mobile-android": "Android"
+                }
+            },
+            "browser": {
+                "name": "Browsers",
+                "icons": {
+                    "browser-chrome": "Chrome",
+                    "browser-firefox": "Firefox",
+                    "browser-edge": "Edge",
+                    "browser-brave": "Brave",
+                    "browser-other": "Other"
+                }
+            },
+            "tv": {
+                "name": "TV & Media",
+                "icons": {
+                    "tv-apple": "Apple TV",
+                    "tv-android": "Android TV",
+                    "tv-firetv": "Fire TV",
+                    "tv-samsung": "Samsung TV",
+                    "tv": "Other"
+                }
+            },
+            "router": {
+                "name": "Routers",
+                "icons": {
+                    "router-openwrt": "OpenWRT",
+                    "router-ubiquiti": "Ubiquiti",
+                    "router-asus": "Asus",
+                    "router-ddwrt": "DD-WRT",
+                    "router": "Other"
+                },
+                "setup_url": "https://github.com/Control-D-Inc/ctrld"
+            }
+        }
+    },
+    "success": true
+}
