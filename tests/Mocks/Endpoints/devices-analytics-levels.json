@@ -1,0 +1,10 @@
+{
+    "body": {
+        "stat_levels": {
+            "0": "No Analytics",
+            "1": "Some Analytics",
+            "2": "Full Analytics"
+        }
+    },
+    "success": true
+}

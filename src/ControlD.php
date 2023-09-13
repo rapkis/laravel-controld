@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rapkis\Controld;
 
 use Illuminate\Http\Client\PendingRequest;
+use Rapkis\Controld\Resources\Devices;
 use Rapkis\Controld\Resources\Profiles;
 
 class ControlD
@@ -16,5 +17,10 @@ class ControlD
     public function profiles(): Profiles
     {
         return app(Profiles::class, ['client' => $this->request]);
+    }
+
+    public function devices(): Devices
+    {
+        return app(Devices::class, ['client' => $this->request]);
     }
 }
