@@ -1,0 +1,28 @@
+{
+    "body": {
+        "ips": [
+            {
+                "ip": "2606:1a40::2",
+                "ts": 1694584816,
+                "country": "US",
+                "city": null,
+                "isp": "Cloudflare"
+            },
+            {
+                "ip": "22606:1a40:1::2",
+                "ts": 1694584816,
+                "country": "US",
+                "city": null,
+                "isp": "Cloudflare"
+            },
+            {
+                "ip": "127.0.0.1",
+                "ts": 1694443821,
+                "country": "NL",
+                "city": "Amsterdam",
+                "isp": "Cloudflare"
+            }
+        ]
+    },
+    "success": true
+}
