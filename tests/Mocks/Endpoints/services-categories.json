@@ -1,0 +1,43 @@
+{
+    "body": {
+        "categories": [
+            {
+                "PK": "audio",
+                "name": "Audio",
+                "description": "Audio streaming services and radio stations",
+                "count": 15
+            },
+            {
+                "PK": "gaming",
+                "name": "Gaming",
+                "description": "Gaming services and individual online games",
+                "count": 19
+            },
+            {
+                "PK": "shop",
+                "name": "Shop",
+                "description": "Shopping and auction websites",
+                "count": 16
+            },
+            {
+                "PK": "social",
+                "name": "Social",
+                "description": "Social networks and messaging tools",
+                "count": 29
+            },
+            {
+                "PK": "tools",
+                "name": "Tools",
+                "description": "Productivity tools and knowledge bases",
+                "count": 33
+            },
+            {
+                "PK": "video",
+                "name": "Video",
+                "description": "Video streaming services and live TV channels",
+                "count": 293
+            }
+        ]
+    },
+    "success": true
+}

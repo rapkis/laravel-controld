@@ -1,0 +1,106 @@
+{
+    "body": {
+        "services": [
+            {
+                "category": "audio",
+                "name": "Apple Music",
+                "warning": "This will also disable the App Store and iTunes. ",
+                "unlock_location": "DFW",
+                "PK": "applemusic"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Audacy",
+                "unlock_location": "JFK",
+                "PK": "audacy"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Audible",
+                "unlock_location": "JFK",
+                "PK": "audible"
+            },
+            {
+                "category": "audio",
+                "name": "Deezer",
+                "unlock_location": "DFW",
+                "PK": "deezer"
+            },
+            {
+                "category": "audio",
+                "name": "JOOX",
+                "unlock_location": "HKG",
+                "PK": "joox"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Last.fm",
+                "unlock_location": "JFK",
+                "PK": "lastfm"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Napster",
+                "unlock_location": "JFK",
+                "PK": "napster"
+            },
+            {
+                "category": "audio",
+                "name": "Pandora",
+                "unlock_location": "DFW",
+                "PK": "pandora"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Shazam",
+                "unlock_location": "JFK",
+                "PK": "shazam"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "SiriusXM",
+                "unlock_location": "JFK",
+                "PK": "siriusxm"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "Sonos",
+                "unlock_location": "JFK",
+                "PK": "sonos"
+            },
+            {
+                "category": "audio",
+                "name": "Soundcloud",
+                "unlock_location": "DFW",
+                "PK": "soundcloud"
+            },
+            {
+                "name": "Spotify",
+                "unlock_location": "DFW",
+                "category": "audio",
+                "PK": "spotify"
+            },
+            {
+                "category": "audio",
+                "name": "Tidal",
+                "unlock_location": "DFW",
+                "PK": "tidal"
+            },
+            {
+                "warning": "",
+                "category": "audio",
+                "name": "TuneIn",
+                "unlock_location": "JFK",
+                "PK": "tunein"
+            }
+        ]
+    },
+    "success": true
+}
