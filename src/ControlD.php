@@ -6,6 +6,7 @@ namespace Rapkis\Controld;
 
 use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\Resources\Access;
+use Rapkis\Controld\Resources\Account;
 use Rapkis\Controld\Resources\Analytics;
 use Rapkis\Controld\Resources\Devices;
 use Rapkis\Controld\Resources\Profiles;
@@ -40,5 +41,10 @@ class ControlD
     public function analytics(): Analytics
     {
         return app(Analytics::class, ['client' => $this->request]);
+    }
+
+    public function account(): Account
+    {
+        return app(Account::class, ['client' => $this->request]);
     }
 }
