@@ -23,7 +23,7 @@ class UserDataFactory implements Factory
             proxyAccess: (bool) $data['proxy_access'],
             lastActive: (int) $data['last_active'],
             twoFactorAuthentication: (bool) $data['twofa'],
-            analyticsRegion: $data['stats_endpoint'],
+            statsEndpoint: $data['stats_endpoint'],
             debug: $data['debug'] ?? [],
         );
     }

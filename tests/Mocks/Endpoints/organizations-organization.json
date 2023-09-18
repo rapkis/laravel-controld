@@ -1,0 +1,43 @@
+{
+    "body": {
+        "organization": {
+            "website": "windscribe.com",
+            "address": "123 Totally Real St, Toronto",
+            "max_profiles": 100,
+            "status": 1,
+            "stats_endpoint": "jfk-org01",
+            "max_users": 400,
+            "max_legacy_resolvers": 10,
+            "name": "Main Inc",
+            "price_users": 2,
+            "date": "2023-08-03",
+            "max_routers": 10,
+            "price_routers": 10,
+            "max_sub_orgs": 5,
+            "contact_email": "yegors+o1@gmail.com",
+            "PK": "77dvawsb",
+            "members": {
+                "count": 2
+            },
+            "profiles": {
+                "count": 3,
+                "max": 100
+            },
+            "users": {
+                "count": 4,
+                "max": 400,
+                "price": 2
+            },
+            "routers": {
+                "count": 3,
+                "max": 10,
+                "price": 10
+            },
+            "sub_organizations": {
+                "count": 3,
+                "max": 5
+            }
+        }
+    },
+    "success": true
+}

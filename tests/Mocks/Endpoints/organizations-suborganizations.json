@@ -1,0 +1,131 @@
+{
+    "body": {
+        "sub_organizations": [
+            {
+                "contact_name": "Mr Manager",
+                "stats_endpoint": "america",
+                "max_legacy_resolvers": 10,
+                "max_profiles": 100,
+                "max_routers": 1,
+                "max_users": 50,
+                "parent_org": {
+                    "name": "Main Inc",
+                    "PK": "77dvawsb"
+                },
+                "twofa_req": 0,
+                "contact_email": "me@manager.com",
+                "status": 1,
+                "date": "2023-08-03",
+                "name": "Managed Inc",
+                "parent_profile": {
+                    "PK": "5083dvaa2l",
+                    "updated": 1693941369,
+                    "name": "Main Policy"
+                },
+                "website": "managed.inc",
+                "address": "123 Whatever Ave",
+                "PK": "79dvapdo",
+                "members": {
+                    "count": 1
+                },
+                "profiles": {
+                    "count": 2,
+                    "max": 100
+                },
+                "users": {
+                    "count": 2,
+                    "max": 50,
+                    "price": 2
+                },
+                "routers": {
+                    "count": 1,
+                    "max": 1,
+                    "price": 10
+                },
+                "sub_organizations": {
+                    "count": 0,
+                    "max": 0
+                }
+            },
+            {
+                "contact_name": "wefef",
+                "stats_endpoint": "ams-org01",
+                "max_legacy_resolvers": 10,
+                "max_profiles": 100,
+                "max_routers": 0,
+                "max_users": 10,
+                "parent_org": {
+                    "name": "Main Inc",
+                    "PK": "77dvawsb"
+                },
+                "twofa_req": 1,
+                "contact_email": "wefwe@fewef.com",
+                "status": 1,
+                "date": "2023-08-04",
+                "name": "123 DNS Ave",
+                "PK": "87dva6xy",
+                "members": {
+                    "count": 0
+                },
+                "profiles": {
+                    "count": 1,
+                    "max": 100
+                },
+                "users": {
+                    "count": 0,
+                    "max": 10,
+                    "price": 2
+                },
+                "routers": {
+                    "count": 0,
+                    "max": 0,
+                    "price": 10
+                },
+                "sub_organizations": {
+                    "count": 0,
+                    "max": 0
+                }
+            },
+            {
+                "contact_name": "rgeerg",
+                "stats_endpoint": "america",
+                "max_legacy_resolvers": 10,
+                "max_profiles": 100,
+                "max_routers": 3,
+                "max_users": 30,
+                "parent_org": {
+                    "name": "Main Inc",
+                    "PK": "77dvawsb"
+                },
+                "twofa_req": 1,
+                "contact_email": "rger@efwef.com",
+                "status": 1,
+                "date": "2023-08-04",
+                "name": "Team Bravo",
+                "PK": "90dva6tf",
+                "members": {
+                    "count": 0
+                },
+                "profiles": {
+                    "count": 0,
+                    "max": 100
+                },
+                "users": {
+                    "count": 0,
+                    "max": 30,
+                    "price": 2
+                },
+                "routers": {
+                    "count": 0,
+                    "max": 3,
+                    "price": 10
+                },
+                "sub_organizations": {
+                    "count": 0,
+                    "max": 0
+                }
+            }
+        ]
+    },
+    "success": true
+}

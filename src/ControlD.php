@@ -9,6 +9,7 @@ use Rapkis\Controld\Resources\Access;
 use Rapkis\Controld\Resources\Account;
 use Rapkis\Controld\Resources\Analytics;
 use Rapkis\Controld\Resources\Devices;
+use Rapkis\Controld\Resources\Organizations;
 use Rapkis\Controld\Resources\Profiles;
 use Rapkis\Controld\Resources\Services;
 
@@ -46,5 +47,10 @@ class ControlD
     public function account(): Account
     {
         return app(Account::class, ['client' => $this->request]);
+    }
+
+    public function organizations(): Organizations
+    {
+        return app(Organizations::class, ['client' => $this->request]);
     }
 }
