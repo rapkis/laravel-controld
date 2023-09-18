@@ -1,0 +1,19 @@
+{
+    "body": {
+        "endpoints": [
+            {
+                "PK": "america",
+                "title": "North America"
+            },
+            {
+                "PK": "europe",
+                "title": "Europe"
+            },
+            {
+                "PK": "asia",
+                "title": "Asia"
+            }
+        ]
+    },
+    "success": true
+}
