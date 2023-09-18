@@ -7,6 +7,7 @@ use Rapkis\Controld\ControlD;
 use Rapkis\Controld\Resources\Access;
 use Rapkis\Controld\Resources\Devices;
 use Rapkis\Controld\Resources\Profiles;
+use Rapkis\Controld\Resources\Services;
 
 it('accesses profiles resource', function () {
     $client = new ControlD($this->createStub(PendingRequest::class));
@@ -21,4 +22,9 @@ it('accesses devices resource', function () {
 it('accesses access resource', function () {
     $client = new ControlD($this->createStub(PendingRequest::class));
     expect($client->access())->toBeInstanceOf(Access::class);
+});
+
+it('accesses services resource', function () {
+    $client = new ControlD($this->createStub(PendingRequest::class));
+    expect($client->services())->toBeInstanceOf(Services::class);
 });

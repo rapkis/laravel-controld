@@ -8,6 +8,7 @@ use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\Resources\Access;
 use Rapkis\Controld\Resources\Devices;
 use Rapkis\Controld\Resources\Profiles;
+use Rapkis\Controld\Resources\Services;
 
 class ControlD
 {
@@ -28,5 +29,10 @@ class ControlD
     public function access(): Access
     {
         return app(Access::class, ['client' => $this->request]);
+    }
+
+    public function services(): Services
+    {
+        return app(Services::class, ['client' => $this->request]);
     }
 }
