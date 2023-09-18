@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Http\Client\PendingRequest;
 use Rapkis\Controld\ControlD;
 use Rapkis\Controld\Resources\Access;
+use Rapkis\Controld\Resources\Account;
 use Rapkis\Controld\Resources\Analytics;
 use Rapkis\Controld\Resources\Devices;
 use Rapkis\Controld\Resources\Profiles;
@@ -33,4 +34,9 @@ it('accesses services resource', function () {
 it('accesses analytics resource', function () {
     $client = new ControlD($this->createStub(PendingRequest::class));
     expect($client->analytics())->toBeInstanceOf(Analytics::class);
+});
+
+it('accesses account resource', function () {
+    $client = new ControlD($this->createStub(PendingRequest::class));
+    expect($client->account())->toBeInstanceOf(Account::class);
 });

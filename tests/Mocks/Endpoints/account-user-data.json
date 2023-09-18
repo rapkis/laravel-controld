@@ -1,0 +1,17 @@
+{
+    "body": {
+        "date": "2000-01-01",
+        "email_status": 1,
+        "email": "test@example.com",
+        "tutorials": 1,
+        "stats_endpoint": "europe",
+        "v": 2,
+        "proxy_access": 1,
+        "status": 1,
+        "last_active": 1669595046,
+        "PK": "4034dvb354",
+        "twofa": 0,
+        "debug": []
+    },
+    "success": true
+}
