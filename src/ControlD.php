@@ -9,6 +9,7 @@ use Rapkis\Controld\Resources\Access;
 use Rapkis\Controld\Resources\Account;
 use Rapkis\Controld\Resources\Analytics;
 use Rapkis\Controld\Resources\Devices;
+use Rapkis\Controld\Resources\Misc;
 use Rapkis\Controld\Resources\MobileConfig;
 use Rapkis\Controld\Resources\Organizations;
 use Rapkis\Controld\Resources\Profiles;
@@ -58,5 +59,10 @@ class ControlD
     public function mobileConfig(): MobileConfig
     {
         return app(MobileConfig::class, ['client' => $this->request]);
+    }
+
+    public function misc(): Misc
+    {
+        return app(Misc::class, ['client' => $this->request]);
     }
 }

@@ -1,0 +1,10 @@
+{
+    "body": {
+        "ip": "66.207.0.0",
+        "type": "v4",
+        "org": "Beanfield Technologies",
+        "country": "CA",
+        "handler": "dva-h01"
+    },
+    "success": true
+}
