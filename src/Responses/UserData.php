@@ -19,7 +19,7 @@ class UserData
         public readonly bool $proxyAccess,
         public readonly int $lastActive,
         public readonly bool $twoFactorAuthentication,
-        public readonly string $analyticsRegion,
+        public readonly string $statsEndpoint,
         public readonly array $debug,
     ) {
     }

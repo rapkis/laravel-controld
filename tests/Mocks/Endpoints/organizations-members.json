@@ -1,0 +1,29 @@
+{
+    "body": {
+        "members": [
+            {
+                "PK": "4754dvah8u",
+                "email": "foo@example.com",
+                "last_active": 1694570241,
+                "twofa": 0,
+                "status": 1,
+                "permission": {
+                    "level": 100,
+                    "printable": "Owner"
+                }
+            },
+            {
+                "PK": "4802dva5iv",
+                "email": "bar@example.com",
+                "last_active": 1692150100,
+                "twofa": 0,
+                "status": 1,
+                "permission": {
+                    "level": 1,
+                    "printable": "Viewer"
+                }
+            }
+        ]
+    },
+    "success": true
+}
