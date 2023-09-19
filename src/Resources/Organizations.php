@@ -53,4 +53,64 @@ class Organizations
 
         return $result;
     }
+
+    public function createSubOrganization(
+        string $name,
+        string $contactEmail,
+        bool $twoFactorAuthenticationRequired,
+        string $statsEndpoint,
+        int $maxUsers,
+        int $maxRouters,
+        string $address = null,
+        string $website = null,
+        string $contactName = null,
+        string $contactPhone = null,
+        string $parentProfile = null,
+    ): Organization {
+        $response = $this->client->post('organizations/suborg', [
+            'name' => $name,
+            'contact_email' => $contactEmail,
+            'twofa_req' => $twoFactorAuthenticationRequired,
+            'stats_endpoint' => $statsEndpoint,
+            'max_users' => $maxUsers,
+            'max_routers' => $maxRouters,
+            'address' => $address,
+            'website' => $website,
+            'contact_name' => $contactName,
+            'contact_phone' => $contactPhone,
+            'parent_profile' => $parentProfile,
+        ])->json('body.organization');
+
+        return $this->organization->make($response);
+    }
+
+    public function modifyOrganization(
+        string $name,
+        string $contactEmail,
+        bool $twoFactorAuthenticationRequired,
+        string $statsEndpoint,
+        int $maxUsers,
+        int $maxRouters,
+        string $address = null,
+        string $website = null,
+        string $contactName = null,
+        string $contactPhone = null,
+        string $parentProfile = null,
+    ): Organization {
+        $response = $this->client->put('organizations', [
+            'name' => $name,
+            'contact_email' => $contactEmail,
+            'twofa_req' => $twoFactorAuthenticationRequired,
+            'stats_endpoint' => $statsEndpoint,
+            'max_users' => $maxUsers,
+            'max_routers' => $maxRouters,
+            'address' => $address,
+            'website' => $website,
+            'contact_name' => $contactName,
+            'contact_phone' => $contactPhone,
+            'parent_profile' => $parentProfile,
+        ])->json('body.organization');
+
+        return $this->organization->make($response);
+    }
 }

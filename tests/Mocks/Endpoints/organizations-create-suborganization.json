@@ -1,0 +1,48 @@
+{
+    "body": {
+        "organization": {
+            "contact_phone": "123-456-7890",
+            "contact_name": "Sterling Archer",
+            "website": "windscribe.com",
+            "address": "123 Real St",
+            "stats_endpoint": "jfk-org01",
+            "max_legacy_resolvers": 10,
+            "max_profiles": 100,
+            "max_routers": 1,
+            "max_users": 10,
+            "parent_org": {
+                "name": "Main Inc",
+                "PK": "77dvawsb"
+            },
+            "twofa_req": 1,
+            "contact_email": "contact@email.com",
+            "status": 1,
+            "date": "2023-09-12",
+            "name": "Managed Inc 2",
+            "PK": "173dvaonf",
+            "members": {
+                "count": 0
+            },
+            "profiles": {
+                "count": 0,
+                "max": 100
+            },
+            "users": {
+                "count": 0,
+                "max": 10,
+                "price": 2
+            },
+            "routers": {
+                "count": 0,
+                "max": 1,
+                "price": 10
+            },
+            "sub_organizations": {
+                "count": 0,
+                "max": 0
+            }
+        }
+    },
+    "success": true,
+    "message": "Sub-organization has been created."
+}

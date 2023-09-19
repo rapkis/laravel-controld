@@ -62,3 +62,49 @@ it('lists sub-organizations', function () {
     expect($result)->toBeInstanceOf(\Rapkis\Controld\Responses\Organizations::class)
         ->and($result)->toHaveCount(3);
 });
+
+it('creates a sub-organization', function () {
+    $request = Http::fake([
+        'organizations/suborg' => Http::response(mockJsonEndpoint('organizations-create-suborganization')),
+    ])->asJson();
+
+    $resource = new Organizations(
+        $request,
+        app(OrganizationFactory::class),
+        $this->createStub(MemberFactory::class),
+    );
+
+    $result = $resource->createSubOrganization(
+        'name',
+        'test@example.com',
+        true,
+        'europe',
+        100,
+        100
+    );
+
+    expect($result)->toBeInstanceOf(Organization::class);
+});
+
+it('modifies the organization', function () {
+    $request = Http::fake([
+        'organizations' => Http::response(mockJsonEndpoint('organizations-modify-organization')),
+    ])->asJson();
+
+    $resource = new Organizations(
+        $request,
+        app(OrganizationFactory::class),
+        $this->createStub(MemberFactory::class),
+    );
+
+    $result = $resource->modifyOrganization(
+        'name',
+        'test@example.com',
+        true,
+        'europe',
+        100,
+        100
+    );
+
+    expect($result)->toBeInstanceOf(Organization::class);
+});
