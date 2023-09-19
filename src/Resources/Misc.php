@@ -24,7 +24,7 @@ class Misc
         return $this->ip->make($this->client->get('ip')->json('body'));
     }
 
-    public function networkStats()
+    public function networkStats(): Networks
     {
         $response = $this->client->get('network')->json('body');
 
