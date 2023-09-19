@@ -21,12 +21,17 @@ class ControlDErrorHandlerMiddleware implements ResponseMiddleware
     {
         $data = json_decode($response->getBody()->getContents(), true);
 
+        $shouldBeJson = in_array('application/json', $response->getHeader('Content-Type'));
+        if (! $shouldBeJson && $data === null) {
+            return;
+        }
+
         if (($data['success'] ?? false)) {
             return;
         }
 
         throw new ControlDErrorException(
-            $data['error']['message'] ?? 'An ControlD unknown error has occurred',
+            $data['error']['message'] ?? 'An unknown ControlD error has occurred',
             $data['error']['code'] ?? 500,
         );
     }
