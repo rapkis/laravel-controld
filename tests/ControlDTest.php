@@ -8,6 +8,7 @@ use Rapkis\Controld\Resources\Access;
 use Rapkis\Controld\Resources\Account;
 use Rapkis\Controld\Resources\Analytics;
 use Rapkis\Controld\Resources\Devices;
+use Rapkis\Controld\Resources\Misc;
 use Rapkis\Controld\Resources\MobileConfig;
 use Rapkis\Controld\Resources\Organizations;
 use Rapkis\Controld\Resources\Profiles;
@@ -51,4 +52,9 @@ it('accesses organizations resource', function () {
 it('accesses mobile config resource', function () {
     $client = new ControlD($this->createStub(PendingRequest::class));
     expect($client->mobileConfig())->toBeInstanceOf(MobileConfig::class);
+});
+
+it('accesses misc resource', function () {
+    $client = new ControlD($this->createStub(PendingRequest::class));
+    expect($client->misc())->toBeInstanceOf(Misc::class);
 });

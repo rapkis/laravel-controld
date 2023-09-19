@@ -1,0 +1,79 @@
+{
+    "body": {
+        "network": [
+            {
+                "iata_code": "AMS",
+                "city_name": "Amsterdam",
+                "country_name": "NL",
+                "location": {
+                    "lat": 52.377956,
+                    "long": 4.89707
+                },
+                "status": {
+                    "api": 1,
+                    "dns": 1,
+                    "pxy": -1
+                }
+            },
+            {
+                "iata_code": "CDG",
+                "city_name": "Paris",
+                "country_name": "FR",
+                "location": {
+                    "lat": 48.81340913389218,
+                    "long": 2.5556617457046547
+                },
+                "status": {
+                    "api": 1,
+                    "dns": 1,
+                    "pxy": -1
+                }
+            },
+            {
+                "iata_code": "CGH",
+                "city_name": "São Paulo",
+                "country_name": "BR",
+                "location": {
+                    "lat": -23.72876040612837,
+                    "long": -46.48397842634525
+                },
+                "status": {
+                    "api": 1,
+                    "dns": 1,
+                    "pxy": 1
+                }
+            },
+            {
+                "iata_code": "CHI",
+                "city_name": "Chicago",
+                "country_name": "US",
+                "location": {
+                    "lat": 41.855159216729724,
+                    "long": -87.67313302781018
+                },
+                "status": {
+                    "api": 1,
+                    "dns": 1,
+                    "pxy": -1
+                }
+            },
+            {
+                "iata_code": "DAL",
+                "city_name": "Dallas",
+                "country_name": "US",
+                "location": {
+                    "lat": 32.83519150465354,
+                    "long": -96.66913588349176
+                },
+                "status": {
+                    "api": 1,
+                    "dns": 1,
+                    "pxy": -1
+                }
+            }
+        ],
+        "time": 1695135064,
+        "current_pop": "IAD"
+    },
+    "success": true
+}
