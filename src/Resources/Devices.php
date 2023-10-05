@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rapkis\Controld\Resources;
 
 use Illuminate\Http\Client\PendingRequest;
+use Rapkis\Controld\Enums\DeviceStatus;
 use Rapkis\Controld\Factories\DeviceFactory;
 use Rapkis\Controld\Factories\DeviceTypeFactory;
 use Rapkis\Controld\Responses\Device;
@@ -104,6 +105,8 @@ class Devices
         string $ddnsSubdomain = null,
         int $ddnsExternalStatus = null,
         string $ddnsExternalHost = null,
+        DeviceStatus $status = null,
+        string $ctrldCustomConfig = null,
     ): Device {
         $response = $this->client->put("devices/{$devicePk}", [
             'name' => $name,
@@ -120,6 +123,8 @@ class Devices
             'ddns_subdomain' => $ddnsSubdomain,
             'ddns_ext_status' => $ddnsExternalStatus,
             'ddns_ext_host' => $ddnsExternalHost,
+            'status' => $status?->value,
+            'ctrld_custom_config' => $ctrldCustomConfig,
         ])->json('body');
 
         return $this->device->make($response);
