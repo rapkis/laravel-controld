@@ -86,7 +86,7 @@ it('creates a sub-organization', function () {
     expect($result)->toBeInstanceOf(Organization::class);
 });
 
-it('modifies the organization', function () {
+it('modifies the organization', function (array $arguments) {
     $request = Http::fake([
         'organizations' => Http::response(mockJsonEndpoint('organizations-modify-organization')),
     ])->asJson();
@@ -97,14 +97,24 @@ it('modifies the organization', function () {
         $this->createStub(MemberFactory::class),
     );
 
-    $result = $resource->modifyOrganization(
-        'name',
-        'test@example.com',
-        true,
-        'europe',
-        100,
-        100
-    );
+    $result = $resource->modifyOrganization(...$arguments);
 
     expect($result)->toBeInstanceOf(Organization::class);
-});
+})->with([
+    [
+        [
+            'name',
+            'test@example.com',
+            true,
+            'europe',
+            100,
+            100,
+            'Fake str. 123',
+            'example.com',
+            'Contact Name',
+            '+12345567890',
+            'parent_profile_pk',
+        ],
+        [],
+    ],
+]);
