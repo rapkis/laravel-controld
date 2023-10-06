@@ -29,7 +29,7 @@ class OrganizationFactory implements Factory
             contactPhone: $data['contact_phone'] ?? '',
             website: $data['website'] ?? '',
             address: $data['address'] ?? '',
-            statsEndpoint: $data['stats_endpoint'],
+            statsEndpoint: $data['stats_endpoint'] ?? '',
             twoFactorAuthenticationRequired: (bool) ($data['twofa_req'] ?? null),
             date: CarbonImmutable::make($data['date']),
             priceUsers: (float) ($data['price_users'] ?? null),
