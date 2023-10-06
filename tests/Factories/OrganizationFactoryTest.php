@@ -17,7 +17,6 @@ it('builds a organization', function (array $data, Organization $expected) {
             'address' => '123 Totally Real St, Toronto',
             'max_profiles' => 100,
             'status' => 1,
-            'stats_endpoint' => 'jfk-org01',
             'max_users' => 400,
             'max_legacy_resolvers' => 10,
             'name' => 'Main Inc',
@@ -60,7 +59,7 @@ it('builds a organization', function (array $data, Organization $expected) {
             contactPhone: '',
             website: 'example.com',
             address: '123 Totally Real St, Toronto',
-            statsEndpoint: 'jfk-org01',
+            statsEndpoint: '',
             twoFactorAuthenticationRequired: false,
             date: CarbonImmutable::make('2000-01-01'),
             priceUsers: 2.00,
@@ -100,7 +99,6 @@ it('builds a organization', function (array $data, Organization $expected) {
         [
             'max_profiles' => 100,
             'status' => 1,
-            'stats_endpoint' => 'jfk-org01',
             'max_users' => 400,
             'max_legacy_resolvers' => 10,
             'name' => 'Main Inc',
@@ -129,6 +127,7 @@ it('builds a organization', function (array $data, Organization $expected) {
                 'max' => 0,
             ],
             // new
+            'stats_endpoint' => 'jfk-org01',
             'parent_profile' => [
                 'PK' => 'profile_pk',
                 'updated' => 111111111,
