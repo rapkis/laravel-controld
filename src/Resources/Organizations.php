@@ -61,11 +61,11 @@ class Organizations
         string $statsEndpoint,
         int $maxUsers,
         int $maxRouters,
-        string $address = null,
-        string $website = null,
-        string $contactName = null,
-        string $contactPhone = null,
-        string $parentProfile = null,
+        ?string $address = null,
+        ?string $website = null,
+        ?string $contactName = null,
+        ?string $contactPhone = null,
+        ?string $parentProfile = null,
     ): Organization {
         $response = $this->client->post('organizations/suborg', [
             'name' => $name,
@@ -85,17 +85,17 @@ class Organizations
     }
 
     public function modifyOrganization(
-        string $name = null,
-        string $contactEmail = null,
-        bool $twoFactorAuthenticationRequired = null,
-        string $statsEndpoint = null,
-        int $maxUsers = null,
-        int $maxRouters = null,
-        string $address = null,
-        string $website = null,
-        string $contactName = null,
-        string $contactPhone = null,
-        string $parentProfile = null,
+        ?string $name = null,
+        ?string $contactEmail = null,
+        ?bool $twoFactorAuthenticationRequired = null,
+        ?string $statsEndpoint = null,
+        ?int $maxUsers = null,
+        ?int $maxRouters = null,
+        ?string $address = null,
+        ?string $website = null,
+        ?string $contactName = null,
+        ?string $contactPhone = null,
+        ?string $parentProfile = null,
     ): Organization {
         $response = $this->client->put('organizations', [
             'name' => $name,

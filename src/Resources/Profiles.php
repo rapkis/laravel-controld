@@ -38,7 +38,7 @@ class Profiles
         return $result;
     }
 
-    public function create(string $name, string $cloneProfileId = null): Profile
+    public function create(string $name, ?string $cloneProfileId = null): Profile
     {
         $profile = $this->client->post('profiles', [
             'name' => $name,
@@ -48,7 +48,7 @@ class Profiles
         return $this->profile->make($profile);
     }
 
-    public function modify(string $profilePk, string $name = null, int $disableTtl = null): Profile
+    public function modify(string $profilePk, ?string $name = null, ?int $disableTtl = null): Profile
     {
         $profile = $this->client->post("profiles/{$profilePk}", [
             'name' => $name,

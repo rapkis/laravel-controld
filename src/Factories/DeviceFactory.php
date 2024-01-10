@@ -40,7 +40,7 @@ class DeviceFactory implements Factory
             profile: (new ProfileFactory())->make($data['profile']),
             profile2: ! empty($data['profile2']) ? (new ProfileFactory())->make($data['profile2']) : null,
             description: $data['description'] ?? '',
-            stats: DeviceAnalytics::tryFrom($data['stats'] ?? null),
+            stats: ! empty($data['stats']) ? DeviceAnalytics::tryFrom($data['stats']) : DeviceAnalytics::OFF,
             icon: $data['icon'] ?? null,
             dynamicDns: $dynamicDns ?? null,
             dynamicDnsExternal: $externalDns ?? null,
