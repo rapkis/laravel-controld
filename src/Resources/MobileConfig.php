@@ -18,7 +18,7 @@ class MobileConfig
         array $excludeDomain = [],
         bool $dontSign = false,
         bool $excludeCommon = false,
-        string $clientId = null,
+        ?string $clientId = null,
     ): string {
         return $this->client->get("mobileconfig/{$devicePk}", [
             'exclude_wifi' => $excludeWifi,

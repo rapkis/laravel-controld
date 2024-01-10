@@ -14,7 +14,7 @@ class CustomRules
     {
     }
 
-    public function list(string $profilePk, int $folderPk = null): \Rapkis\Controld\Responses\CustomRules
+    public function list(string $profilePk, ?int $folderPk = null): \Rapkis\Controld\Responses\CustomRules
     {
         $folderPk = $folderPk ?? 'all'; // This is the default folder in ControlD that lists all rules
         $response = $this->client->get("profiles/{$profilePk}/rules/{$folderPk}")->json('body.rules');
