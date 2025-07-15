@@ -52,7 +52,7 @@ class Profiles
     {
         $profile = $this->client->post("profiles/{$profilePk}", [
             'name' => $name,
-            'disable_tll' => $disableTtl,
+            'disable_ttl' => $disableTtl,
         ])->json('body.profiles.0');
 
         return $this->profile->make($profile);

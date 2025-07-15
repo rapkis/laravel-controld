@@ -23,13 +23,31 @@ class ControlDFactory
             ->retry(3, 250, new RetryCallback());
 
         foreach ($this->config->get('controld.middleware.request', []) as $middleware) {
-            $this->request->withRequestMiddleware(new $middleware());
+            $this->validateAndApplyMiddleware($middleware, 'request');
         }
 
         foreach ($this->config->get('controld.middleware.response', []) as $middleware) {
-            $this->request->withResponseMiddleware(new $middleware());
+            $this->validateAndApplyMiddleware($middleware, 'response');
         }
 
         return new ControlD($this->request);
+    }
+
+    /**
+     * Validate and apply middleware to the request client.
+     */
+    private function validateAndApplyMiddleware(string $middleware, string $type): void
+    {
+        if (! class_exists($middleware)) {
+            throw new \InvalidArgumentException("Middleware class {$middleware} does not exist");
+        }
+
+        $instance = new $middleware();
+        
+        if ($type === 'request') {
+            $this->request->withRequestMiddleware($instance);
+        } else {
+            $this->request->withResponseMiddleware($instance);
+        }
     }
 }

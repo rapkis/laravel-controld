@@ -19,7 +19,15 @@ class ControlDErrorHandlerMiddleware implements ResponseMiddleware
 
     protected function handleResponse(ResponseInterface $response): void
     {
-        $data = json_decode($response->getBody()->getContents(), true);
+        $body = $response->getBody();
+        $content = (string) $body;
+        
+        // Rewind the stream so other middleware can read it
+        if ($body->isSeekable()) {
+            $body->rewind();
+        }
+        
+        $data = json_decode($content, true);
 
         $shouldBeJson = in_array('application/json', $response->getHeader('Content-Type'));
         if (! $shouldBeJson && $data === null) {
