@@ -35,7 +35,7 @@ it('creates an api client', function () {
         ->willReturnSelf();
 
     $request->expects($this->once())->method('retry')
-        ->with(3, 250, new RetryCallback())
+        ->with(3, 250, new RetryCallback)
         ->willReturnSelf();
 
     $factory->make();

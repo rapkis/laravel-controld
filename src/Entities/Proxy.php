@@ -14,6 +14,5 @@ class Proxy
         public readonly string $city,
         public readonly float $gpsLat,
         public readonly float $gpsLong
-    ) {
-    }
+    ) {}
 }

@@ -7,7 +7,7 @@ use Rapkis\Controld\Factories\ServiceFactory;
 use Rapkis\Controld\Responses\Action;
 
 it('builds a service', function (array $data, Service $expected) {
-    expect((new ServiceFactory())->make($data))->toEqual($expected);
+    expect((new ServiceFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

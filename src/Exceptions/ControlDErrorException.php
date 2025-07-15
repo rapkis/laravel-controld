@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Exceptions;
 
 use Exception;
 
-class ControlDErrorException extends Exception
-{
-}
+class ControlDErrorException extends Exception {}

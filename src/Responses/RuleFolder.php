@@ -11,6 +11,5 @@ class RuleFolder
         public readonly string $group,
         public readonly Action $action,
         public readonly int $count
-    ) {
-    }
+    ) {}
 }

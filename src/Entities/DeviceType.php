@@ -14,6 +14,5 @@ class DeviceType
         public readonly string $name,
         public readonly array $icons,
         public readonly ?string $setupUrl,
-    ) {
-    }
+    ) {}
 }

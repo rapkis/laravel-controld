@@ -9,9 +9,7 @@ use Illuminate\Http\Client\PendingRequest;
 
 class ControlDFactory
 {
-    public function __construct(private PendingRequest $request, private Repository $config)
-    {
-    }
+    public function __construct(private PendingRequest $request, private Repository $config) {}
 
     public function make(): ControlD
     {
@@ -20,7 +18,7 @@ class ControlDFactory
             ->acceptJson()
             ->baseUrl($this->config->get('controld.url'))
             ->withToken($this->config->get('controld.secret'))
-            ->retry(3, 250, new RetryCallback());
+            ->retry(3, 250, new RetryCallback);
 
         foreach ($this->config->get('controld.middleware.request', []) as $middleware) {
             $this->validateAndApplyMiddleware($middleware, 'request');
@@ -42,8 +40,8 @@ class ControlDFactory
             throw new \InvalidArgumentException("Middleware class {$middleware} does not exist");
         }
 
-        $instance = new $middleware();
-        
+        $instance = new $middleware;
+
         if ($type === 'request') {
             $this->request->withRequestMiddleware($instance);
         } else {

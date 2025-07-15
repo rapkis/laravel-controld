@@ -11,6 +11,5 @@ class DynamicDns
         public readonly string $hostname,
         public readonly ?string $subdomain,
         public readonly ?string $record,
-    ) {
-    }
+    ) {}
 }

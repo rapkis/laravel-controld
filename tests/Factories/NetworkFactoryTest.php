@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\Network;
 use Rapkis\Controld\Factories\NetworkFactory;
 
 it('builds a network', function (array $data, Network $expected) {
-    expect((new NetworkFactory())->make($data))->toEqual($expected);
+    expect((new NetworkFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

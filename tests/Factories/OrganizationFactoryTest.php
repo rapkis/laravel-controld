@@ -9,7 +9,7 @@ use Rapkis\Controld\Responses\Organization;
 use Rapkis\Controld\Responses\Profile;
 
 it('builds a organization', function (array $data, Organization $expected) {
-    expect((new OrganizationFactory())->make($data))->toEqual($expected);
+    expect((new OrganizationFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

@@ -21,12 +21,12 @@ class ControlDErrorHandlerMiddleware implements ResponseMiddleware
     {
         $body = $response->getBody();
         $content = (string) $body;
-        
+
         // Rewind the stream so other middleware can read it
         if ($body->isSeekable()) {
             $body->rewind();
         }
-        
+
         $data = json_decode($content, true);
 
         $shouldBeJson = in_array('application/json', $response->getHeader('Content-Type'));

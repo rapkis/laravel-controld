@@ -7,7 +7,7 @@ use Rapkis\Controld\Factories\ProfileFactory;
 use Rapkis\Controld\Responses\Profile;
 
 it('builds a profile', function (array $data, Profile $expected) {
-    expect((new ProfileFactory())->make($data))->toEqual($expected);
+    expect((new ProfileFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

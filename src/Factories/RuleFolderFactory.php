@@ -14,7 +14,7 @@ class RuleFolderFactory implements Factory
         return new RuleFolder(
             pk: $data['PK'],
             group: $data['group'],
-            action: (new ActionFactory())->make($data['action']),
+            action: (new ActionFactory)->make($data['action']),
             count: $data['count'],
         );
     }

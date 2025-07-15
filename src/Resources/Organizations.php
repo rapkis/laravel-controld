@@ -16,8 +16,7 @@ class Organizations
         private readonly PendingRequest $client,
         private readonly OrganizationFactory $organization,
         private readonly MemberFactory $member,
-    ) {
-    }
+    ) {}
 
     public function organization(): Organization
     {
@@ -30,7 +29,7 @@ class Organizations
     {
         $response = $this->client->get('organizations/members')->json('body.members');
 
-        $result = new Members();
+        $result = new Members;
 
         foreach ($response as $member) {
             $member = $this->member->make($member);
@@ -44,7 +43,7 @@ class Organizations
     {
         $response = $this->client->get('organizations/sub_organizations')->json('body.sub_organizations');
 
-        $result = new \Rapkis\Controld\Responses\Organizations();
+        $result = new \Rapkis\Controld\Responses\Organizations;
 
         foreach ($response as $organization) {
             $organization = $this->organization->make($organization);

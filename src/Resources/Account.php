@@ -10,9 +10,7 @@ use Rapkis\Controld\Responses\UserData;
 
 class Account
 {
-    public function __construct(private readonly PendingRequest $client, private readonly UserDataFactory $user)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly UserDataFactory $user) {}
 
     public function users(): UserData
     {

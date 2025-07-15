@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class Services extends Collection
-{
-}
+class Services extends Collection {}

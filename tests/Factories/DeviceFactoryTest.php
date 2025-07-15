@@ -11,7 +11,7 @@ use Rapkis\Controld\Responses\Device;
 use Rapkis\Controld\Responses\Profile;
 
 it('builds a device', function (array $data, Device $expected) {
-    expect((new DeviceFactory())->make($data))->toEqual($expected);
+    expect((new DeviceFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

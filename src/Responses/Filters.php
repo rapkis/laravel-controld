@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class Filters extends Collection
-{
-}
+class Filters extends Collection {}

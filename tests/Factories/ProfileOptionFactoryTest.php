@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\ProfileOption;
 use Rapkis\Controld\Factories\ProfileOptionFactory;
 
 it('builds a profile option', function (array $data, ProfileOption $expected) {
-    expect((new ProfileOptionFactory())->make($data))->toEqual($expected);
+    expect((new ProfileOptionFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [
@@ -107,7 +107,7 @@ it('builds a profile option', function (array $data, ProfileOption $expected) {
 ]);
 
 it('casts boolean values', function () {
-    $option = (new ProfileOptionFactory())->make([
+    $option = (new ProfileOptionFactory)->make([
         'PK' => 'block_foo_false',
         'title' => 'This is a toggle option',
         'description' => 'This set represents an option that can be toggled',
@@ -118,7 +118,7 @@ it('casts boolean values', function () {
 
     expect($option->default)->toBeFalse();
 
-    $option = (new ProfileOptionFactory())->make([
+    $option = (new ProfileOptionFactory)->make([
         'PK' => 'block_bar_true',
         'title' => 'This is a toggle option',
         'description' => 'This set represents an option that can be toggled. It is on by default',

@@ -21,6 +21,5 @@ class UserData
         public readonly bool $twoFactorAuthentication,
         public readonly string $statsEndpoint,
         public readonly array $debug,
-    ) {
-    }
+    ) {}
 }

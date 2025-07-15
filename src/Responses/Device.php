@@ -32,6 +32,5 @@ class Device
         public readonly ?DnsResolver $legacyIpv4,
         public readonly ?int $lastActivity,
         public readonly bool $restricted,
-    ) {
-    }
+    ) {}
 }

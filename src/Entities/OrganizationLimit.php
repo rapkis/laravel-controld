@@ -10,6 +10,5 @@ class OrganizationLimit
         public readonly int $count,
         public readonly ?int $max,
         public readonly ?float $price,
-    ) {
-    }
+    ) {}
 }

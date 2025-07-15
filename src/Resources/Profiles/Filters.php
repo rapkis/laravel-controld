@@ -9,15 +9,13 @@ use Rapkis\Controld\Factories\FilterFactory;
 
 class Filters
 {
-    public function __construct(private readonly PendingRequest $client, private readonly FilterFactory $filter)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly FilterFactory $filter) {}
 
     public function native(string $profilePk): \Rapkis\Controld\Responses\Filters
     {
         $response = $this->client->get("profiles/{$profilePk}/filters")->json('body.filters');
 
-        $result = new \Rapkis\Controld\Responses\Filters();
+        $result = new \Rapkis\Controld\Responses\Filters;
 
         foreach ($response as $filter) {
             $filter = $this->filter->make($filter);
@@ -31,7 +29,7 @@ class Filters
     {
         $response = $this->client->get("profiles/{$profilePk}/filters/external")->json('body.filters');
 
-        $result = new \Rapkis\Controld\Responses\Filters();
+        $result = new \Rapkis\Controld\Responses\Filters;
 
         foreach ($response as $filter) {
             $filter = $this->filter->make($filter);

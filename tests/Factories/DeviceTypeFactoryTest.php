@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\DeviceType;
 use Rapkis\Controld\Factories\DeviceTypeFactory;
 
 it('builds a device type', function (array $data, DeviceType $expected) {
-    expect((new DeviceTypeFactory())->make($data))->toEqual($expected);
+    expect((new DeviceTypeFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

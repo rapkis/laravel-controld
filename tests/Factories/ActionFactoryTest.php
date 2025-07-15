@@ -6,7 +6,7 @@ use Rapkis\Controld\Factories\ActionFactory;
 use Rapkis\Controld\Responses\Action;
 
 it('builds an action', function (array $data, Action $expected) {
-    expect((new ActionFactory())->make($data))->toEqual($expected);
+    expect((new ActionFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

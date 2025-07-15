@@ -12,6 +12,5 @@ class FilterOption
         public readonly string $type,
         public readonly string $name,
         public readonly bool $status,
-    ) {
-    }
+    ) {}
 }

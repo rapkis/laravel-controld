@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class ProfileList extends Collection
-{
-}
+class ProfileList extends Collection {}

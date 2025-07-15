@@ -7,7 +7,7 @@ use Rapkis\Controld\Factories\UserDataFactory;
 use Rapkis\Controld\Responses\UserData;
 
 it('builds user data', function (array $data, UserData $expected) {
-    expect((new UserDataFactory())->make($data))->toEqual($expected);
+    expect((new UserDataFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

@@ -8,9 +8,7 @@ use Illuminate\Http\Client\PendingRequest;
 
 class Analytics
 {
-    public function __construct(private readonly PendingRequest $client)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client) {}
 
     public function levels(): array
     {

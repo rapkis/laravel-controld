@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class Proxies extends Collection
-{
-}
+class Proxies extends Collection {}

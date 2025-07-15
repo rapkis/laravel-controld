@@ -16,8 +16,7 @@ class Misc
         private readonly PendingRequest $client,
         private readonly DatacenterIpFactory $ip,
         private readonly NetworkFactory $network,
-    ) {
-    }
+    ) {}
 
     public function ip(): DatacenterIp
     {

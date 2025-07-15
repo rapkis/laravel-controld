@@ -7,7 +7,7 @@ use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\CustomRule;
 
 it('builds a custom rule', function (array $data, CustomRule $expected) {
-    expect((new CustomRuleFactory())->make($data))->toEqual($expected);
+    expect((new CustomRuleFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

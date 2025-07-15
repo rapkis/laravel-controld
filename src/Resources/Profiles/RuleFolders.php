@@ -11,15 +11,13 @@ use Rapkis\Controld\Responses\RuleFolder;
 
 class RuleFolders
 {
-    public function __construct(private readonly PendingRequest $client, private readonly RuleFolderFactory $ruleFolder)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly RuleFolderFactory $ruleFolder) {}
 
     public function list(string $profilePk): \Rapkis\Controld\Responses\RuleFolders
     {
         $response = $this->client->get("profiles/{$profilePk}/groups")->json('body.groups');
 
-        $result = new \Rapkis\Controld\Responses\RuleFolders();
+        $result = new \Rapkis\Controld\Responses\RuleFolders;
 
         foreach ($response as $folder) {
             $folder = $this->ruleFolder->make($folder);

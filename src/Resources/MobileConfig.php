@@ -8,9 +8,7 @@ use Illuminate\Http\Client\PendingRequest;
 
 class MobileConfig
 {
-    public function __construct(private readonly PendingRequest $client)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client) {}
 
     public function generateProfile(
         string $devicePk,

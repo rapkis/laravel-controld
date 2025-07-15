@@ -17,9 +17,7 @@ use Rapkis\Controld\Resources\Services;
 
 class ControlD
 {
-    public function __construct(private PendingRequest $request)
-    {
-    }
+    public function __construct(private PendingRequest $request) {}
 
     public function profiles(): Profiles
     {

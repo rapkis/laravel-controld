@@ -15,7 +15,7 @@ class CustomRuleFactory implements Factory
             pk: $data['PK'],
             order: $data['order'],
             group: $data['group'],
-            action: (new ActionFactory())->make($data['action']),
+            action: (new ActionFactory)->make($data['action']),
         );
     }
 }

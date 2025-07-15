@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\LearnedIp;
 use Rapkis\Controld\Factories\LearnedIpFactory;
 
 it('builds a learned ip', function (array $data, LearnedIp $expected) {
-    expect((new LearnedIpFactory())->make($data))->toEqual($expected);
+    expect((new LearnedIpFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

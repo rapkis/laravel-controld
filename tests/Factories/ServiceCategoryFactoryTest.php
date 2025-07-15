@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\ServiceCategory;
 use Rapkis\Controld\Factories\ServiceCategoryFactory;
 
 it('builds a service category', function (array $data, ServiceCategory $expected) {
-    expect((new ServiceCategoryFactory())->make($data))->toEqual($expected);
+    expect((new ServiceCategoryFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

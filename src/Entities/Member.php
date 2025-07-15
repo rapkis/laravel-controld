@@ -13,6 +13,5 @@ class Member
         public readonly bool $twoFactorAuthentication,
         public readonly bool $status,
         public readonly Permission $permission,
-    ) {
-    }
+    ) {}
 }

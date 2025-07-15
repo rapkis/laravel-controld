@@ -16,6 +16,5 @@ class Service
         public readonly array $locations,
         public readonly ?string $warning,
         public readonly ?Action $action,
-    ) {
-    }
+    ) {}
 }

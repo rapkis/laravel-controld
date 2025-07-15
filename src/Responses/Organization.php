@@ -35,6 +35,5 @@ class Organization
         public readonly OrganizationLimit $users,
         public readonly OrganizationLimit $routers,
         public readonly OrganizationLimit $subOrganizations,
-    ) {
-    }
+    ) {}
 }

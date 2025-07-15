@@ -6,7 +6,7 @@ use Rapkis\Controld\Factories\DatacenterIpFactory;
 use Rapkis\Controld\Responses\DatacenterIp;
 
 it('builds a data center ip', function (array $data, DatacenterIp $expected) {
-    expect((new DatacenterIpFactory())->make($data))->toEqual($expected);
+    expect((new DatacenterIpFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

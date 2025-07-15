@@ -15,6 +15,5 @@ class Network
         public readonly int $apiStatus,
         public readonly int $dnsStatus,
         public readonly int $proxyStatus,
-    ) {
-    }
+    ) {}
 }

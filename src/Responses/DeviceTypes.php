@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class DeviceTypes extends Collection
-{
-}
+class DeviceTypes extends Collection {}

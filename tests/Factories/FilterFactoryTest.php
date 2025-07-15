@@ -8,7 +8,7 @@ use Rapkis\Controld\Entities\FilterOption;
 use Rapkis\Controld\Factories\FilterFactory;
 
 it('builds a filter', function (array $data, Filter $expected) {
-    expect((new FilterFactory())->make($data))->toEqual($expected);
+    expect((new FilterFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

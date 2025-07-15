@@ -14,7 +14,7 @@ class OrganizationFactory implements Factory
     public function make(array $data): Organization
     {
         if (! empty($data['parent_profile'])) {
-            $parentProfile = (new ProfileFactory())->make($data['parent_profile']);
+            $parentProfile = (new ProfileFactory)->make($data['parent_profile']);
         }
 
         return new Organization(

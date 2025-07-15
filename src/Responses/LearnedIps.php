@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class LearnedIps extends Collection
-{
-}
+class LearnedIps extends Collection {}

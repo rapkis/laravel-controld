@@ -6,6 +6,4 @@ namespace Rapkis\Controld\Responses;
 
 use Illuminate\Support\Collection;
 
-class CustomRules extends Collection
-{
-}
+class CustomRules extends Collection {}

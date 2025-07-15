@@ -10,15 +10,13 @@ use Rapkis\Controld\Responses\LearnedIps;
 
 class Access
 {
-    public function __construct(private readonly PendingRequest $client, private readonly LearnedIpFactory $learnedIp)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly LearnedIpFactory $learnedIp) {}
 
     public function list(string $devicePk): LearnedIps
     {
         $response = $this->client->get('access', ['device_id' => $devicePk])->json('body.ips');
 
-        $result = new LearnedIps();
+        $result = new LearnedIps;
 
         foreach ($response as $learnedIp) {
             $learnedIp = $this->learnedIp->make($learnedIp);

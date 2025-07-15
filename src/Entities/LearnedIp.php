@@ -12,6 +12,5 @@ class LearnedIp
         public readonly string $isp,
         public readonly ?string $country,
         public readonly ?string $city,
-    ) {
-    }
+    ) {}
 }

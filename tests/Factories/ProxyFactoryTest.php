@@ -6,7 +6,7 @@ use Rapkis\Controld\Entities\Proxy;
 use Rapkis\Controld\Factories\ProxyFactory;
 
 it('builds a proxy', function (array $data, Proxy $expected) {
-    expect((new ProxyFactory())->make($data))->toEqual($expected);
+    expect((new ProxyFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

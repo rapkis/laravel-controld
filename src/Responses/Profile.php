@@ -15,6 +15,5 @@ class Profile
         public readonly ?int $disableTtl,
         public readonly ?int $stats,
         public readonly ?ProfileFilters $filters,
-    ) {
-    }
+    ) {}
 }

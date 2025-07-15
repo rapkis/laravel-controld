@@ -20,6 +20,5 @@ class ProfileFilters
         public readonly array $grp,
         public readonly array $opt,
         public readonly array $da,
-    ) {
-    }
+    ) {}
 }

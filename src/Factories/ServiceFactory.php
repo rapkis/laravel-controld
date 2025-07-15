@@ -12,7 +12,7 @@ class ServiceFactory implements Factory
     public function make(array $data): Service
     {
         if (! empty($data['action'])) {
-            $action = (new ActionFactory())->make($data['action']);
+            $action = (new ActionFactory)->make($data['action']);
         }
 
         return new Service(

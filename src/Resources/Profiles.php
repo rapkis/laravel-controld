@@ -21,14 +21,13 @@ class Profiles
     public function __construct(
         private readonly PendingRequest $client,
         private readonly ProfileFactory $profile,
-    ) {
-    }
+    ) {}
 
     public function list(): ProfileList
     {
         $response = $this->client->get('profiles')->json('body.profiles');
 
-        $result = new ProfileList();
+        $result = new ProfileList;
 
         foreach ($response as $profile) {
             $profile = $this->profile->make($profile);

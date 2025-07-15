@@ -15,14 +15,13 @@ class Services
         private readonly PendingRequest $client,
         private readonly ServiceCategoryFactory $category,
         private readonly ServiceFactory $service,
-    ) {
-    }
+    ) {}
 
     public function categories(): ServiceCategories
     {
         $response = $this->client->get('services/categories')->json('body.categories');
 
-        $result = new ServiceCategories();
+        $result = new ServiceCategories;
 
         foreach ($response as $category) {
             $category = $this->category->make($category);
@@ -36,7 +35,7 @@ class Services
     {
         $response = $this->client->get("services/categories/{$categoryPk}")->json('body.services');
 
-        $result = new \Rapkis\Controld\Responses\Services();
+        $result = new \Rapkis\Controld\Responses\Services;
 
         foreach ($response as $service) {
             $service = $this->service->make($service);

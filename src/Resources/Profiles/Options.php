@@ -10,15 +10,13 @@ use Rapkis\Controld\Responses\ProfileOptions;
 
 class Options
 {
-    public function __construct(private readonly PendingRequest $client, private readonly ProfileOptionFactory $option)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly ProfileOptionFactory $option) {}
 
     public function list(): ProfileOptions
     {
         $response = $this->client->get('profiles/options')->json('body.options');
 
-        $result = new ProfileOptions();
+        $result = new ProfileOptions;
 
         foreach ($response as $option) {
             $option = $this->option->make($option);

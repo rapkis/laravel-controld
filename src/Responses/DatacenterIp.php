@@ -12,6 +12,5 @@ class DatacenterIp
         public readonly string $organization,
         public readonly string $country,
         public readonly string $handler,
-    ) {
-    }
+    ) {}
 }

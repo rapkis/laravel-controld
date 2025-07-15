@@ -17,13 +17,12 @@ class Devices
         private readonly PendingRequest $client,
         private readonly DeviceFactory $device,
         private readonly DeviceTypeFactory $deviceType,
-    ) {
-    }
+    ) {}
 
     public function list(): \Rapkis\Controld\Responses\Devices
     {
         $response = $this->client->get('devices')->json('body.devices');
-        $result = new \Rapkis\Controld\Responses\Devices();
+        $result = new \Rapkis\Controld\Responses\Devices;
 
         foreach ($response as $device) {
             $device = $this->device->make($device);
@@ -73,7 +72,7 @@ class Devices
     {
         $response = $this->client->get('devices/types')->json('body.types');
 
-        $result = new DeviceTypes();
+        $result = new DeviceTypes;
 
         foreach ($response as $type => $deviceType) {
             $deviceType['type'] = $type;

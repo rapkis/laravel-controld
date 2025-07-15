@@ -7,7 +7,7 @@ use Rapkis\Controld\Responses\Action;
 use Rapkis\Controld\Responses\RuleFolder;
 
 it('builds a rule folder', function (array $data, RuleFolder $expected) {
-    expect((new RuleFolderFactory())->make($data))->toEqual($expected);
+    expect((new RuleFolderFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

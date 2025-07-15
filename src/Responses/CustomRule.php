@@ -11,6 +11,5 @@ class CustomRule
         public readonly int $order,
         public readonly int $group,
         public readonly Action $action,
-    ) {
-    }
+    ) {}
 }

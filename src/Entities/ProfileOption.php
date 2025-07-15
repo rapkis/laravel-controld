@@ -13,6 +13,5 @@ class ProfileOption
         public readonly string $type,
         public readonly mixed $default,
         public readonly string $infoUrl,
-    ) {
-    }
+    ) {}
 }

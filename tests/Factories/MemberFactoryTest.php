@@ -7,7 +7,7 @@ use Rapkis\Controld\Entities\Permission;
 use Rapkis\Controld\Factories\MemberFactory;
 
 it('builds a organization', function (array $data, Member $expected) {
-    expect((new MemberFactory())->make($data))->toEqual($expected);
+    expect((new MemberFactory)->make($data))->toEqual($expected);
 })->with([
     [
         [

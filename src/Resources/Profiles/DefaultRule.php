@@ -10,9 +10,7 @@ use Rapkis\Controld\Responses\Action;
 
 class DefaultRule
 {
-    public function __construct(private readonly PendingRequest $client, private readonly ActionFactory $action)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly ActionFactory $action) {}
 
     public function list(string $profilePk): ?Action
     {

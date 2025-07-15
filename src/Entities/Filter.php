@@ -20,6 +20,5 @@ class Filter
         public readonly array $options,
         public readonly array $resolvers,
         public readonly bool $status,
-    ) {
-    }
+    ) {}
 }

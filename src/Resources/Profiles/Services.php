@@ -10,15 +10,13 @@ use Rapkis\Controld\Responses\Action;
 
 class Services
 {
-    public function __construct(private readonly PendingRequest $client, private readonly ServiceFactory $service)
-    {
-    }
+    public function __construct(private readonly PendingRequest $client, private readonly ServiceFactory $service) {}
 
     public function list(string $profilePk): \Rapkis\Controld\Responses\Services
     {
         $response = $this->client->get("profiles/{$profilePk}/services")->json('body.services');
 
-        $result = new \Rapkis\Controld\Responses\Services();
+        $result = new \Rapkis\Controld\Responses\Services;
 
         foreach ($response as $service) {
             $service = $this->service->make($service);
