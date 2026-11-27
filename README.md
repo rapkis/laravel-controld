@@ -60,7 +60,7 @@ $controlD = app(\Rapkis\Controld\ControlD::class); // or use DI
 `\Rapkis\Controld\ControlD` depends on Laravel's HTTP client, 
 which is configured automatically via `\Rapkis\Controld\ControlDFactory`.
 To make things simple, it is recommended to resolve it via 
-Laravel's [Service Container](https://laravel.com/docs/10.x/container) (a.k.a. `app()`, Dependency Injection, etc.) 
+Laravel's [Service Container](https://laravel.com/docs/13.x/container) (a.k.a. `app()`, Dependency Injection, etc.) 
 to instantiate the `\Rapkis\Controld\ControlD` class. 
 It's already pre-configured in `\Rapkis\Controld\ControldServiceProvider`.
 
@@ -94,7 +94,7 @@ Resource classes make the requests and map the responses to the response classes
 ## Middleware
 
 Just like with the Laravel's HTTP client (or Guzzle), you can add middlware to interact with your requests and responses.
-You can check how they work in the [Laravel documentation](https://laravel.com/docs/10.x/http-client#guzzle-middleware)
+You can check how they work in the [Laravel documentation](https://laravel.com/docs/13.x/http-client#guzzle-middleware)
 
 For example, this package handles ControlD specific errors with `\Rapkis\Controld\Middleware\ControlDErrorHandlerMiddleware`.
 Instead of parsing the JSON response somewhere in your code, 
